@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cqq66e0q4nwub"]
+
+[ext_resource type="Script" uid="uid://bs1rb6sn211hf" path="res://Scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://d0t0mbr4k58j4" path="res://ArtAssets/PlayerPlaceholder.png" id="1_xhfnw"]
+[ext_resource type="AudioStream" uid="uid://d0iirh8qqsjt7" path="res://Sounds/playerJump.wav" id="3_kne1u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+size = Vector2(40, 126)
+
+[node name="Player" type="CharacterBody2D" unique_id=1082196993]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_kpjcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=682247892]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xhfnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=507559346]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_kpjcp")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1596035327]
+stream = ExtResource("3_kne1u")
