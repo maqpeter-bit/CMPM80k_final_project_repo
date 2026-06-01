@@ -5,7 +5,7 @@ const SPEED = 90.0
 const JUMP_VELOCITY = -400.0
 var player: CharacterBody2D
 var jumpTimer:= 0.0
-var health = 1.0
+var health = 10.0
 var player_in_hitbox = null
 var damage_timer = 0.0
 
