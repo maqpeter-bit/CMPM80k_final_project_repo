@@ -1,10 +1,46 @@
 [gd_scene format=3 uid="uid://bv1ptppmmi3gf"]
 
 [ext_resource type="Script" uid="uid://cotardxskjv02" path="res://arrow.gd" id="1_2ndhl"]
-[ext_resource type="Texture2D" uid="uid://bs33jys2x15an" path="res://ArtAssets/Extras/Arrow.png" id="2_acd0x"]
+[ext_resource type="Texture2D" uid="uid://cxsrgbtvvwoo7" path="res://ArtAssets/Extras/Arrow.png" id="2_acd0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6a6ax"]
 size = Vector2(8.5, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ndhl"]
+atlas = ExtResource("2_acd0x")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acd0x"]
+atlas = ExtResource("2_acd0x")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a6ax"]
+atlas = ExtResource("2_acd0x")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4m3f"]
+atlas = ExtResource("2_acd0x")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fo0gb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ndhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acd0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a6ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4m3f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Arrow" type="Area2D" unique_id=709124974]
 collision_layer = 2
@@ -14,10 +50,15 @@ gravity = 9.8
 script = ExtResource("1_2ndhl")
 mass = 1.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1454797071]
-texture = ExtResource("2_acd0x")
-offset = Vector2(-15, 0)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=661411018]
 position = Vector2(-4, 0)
+scale = Vector2(-2.5, 0.75)
 shape = SubResource("RectangleShape2D_6a6ax")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=340457247]
+position = Vector2(-15, 0)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_fo0gb")
+autoplay = "default"
+frame_progress = 0.285878
+speed_scale = 2.5
