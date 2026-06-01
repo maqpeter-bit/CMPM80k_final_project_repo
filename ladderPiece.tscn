@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bbvemn175whqr"]
+
+[ext_resource type="Texture2D" uid="uid://cjjssv6xrc21f" path="res://ArtAssets/Extras/Ladder.png" id="1_mex2r"]
+
+[node name="Node2D" type="Node2D" unique_id=2070877418]
+scale = Vector2(0.35, 0.35)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1276153722]
+texture = ExtResource("1_mex2r")

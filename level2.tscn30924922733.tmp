@@ -1,19 +1,19 @@
-[gd_scene format=4 uid="uid://cc3wayadl4n8m"]
+[gd_scene format=4 uid="uid://daykgbmlm67cw"]
 
-[ext_resource type="Script" uid="uid://d208vybtkr5fj" path="res://level_controller.gd" id="1_crycw"]
-[ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://ladder_builder.gd" id="1_i2041"]
-[ext_resource type="Texture2D" uid="uid://cvsahamjkdpix" path="res://ArtAssets/Tilemap/GroundPlaceholder.png" id="1_jwv3a"]
-[ext_resource type="PackedScene" uid="uid://cqq66e0q4nwub" path="res://Player.tscn" id="2_dopym"]
-[ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="3_ootpb"]
-[ext_resource type="Texture2D" uid="uid://s5b577tye2of" path="res://ArtAssets/Extras/Pipe.png" id="4_v38iq"]
-[ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="4_xy4tn"]
-[ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://Horde1.tscn" id="5_v8kj3"]
+[ext_resource type="Script" uid="uid://d208vybtkr5fj" path="res://level_controller.gd" id="1_rmy57"]
+[ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://Horde1.tscn" id="2_qulpo"]
+[ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://ladder_builder.gd" id="3_jifot"]
+[ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="4_3opl0"]
+[ext_resource type="Texture2D" uid="uid://cvsahamjkdpix" path="res://ArtAssets/Tilemap/GroundPlaceholder.png" id="5_dc5vx"]
+[ext_resource type="PackedScene" uid="uid://cqq66e0q4nwub" path="res://Player.tscn" id="6_s8oj7"]
+[ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="7_mw4xc"]
+[ext_resource type="Texture2D" uid="uid://s5b577tye2of" path="res://ArtAssets/Extras/Pipe.png" id="8_r8rrl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy4tn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwvnx"]
 size = Vector2(20, 150.08333)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xy4tn"]
-texture = ExtResource("1_jwv3a")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ou0f"]
+texture = ExtResource("5_dc5vx")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -463,75 +463,64 @@ texture = ExtResource("1_jwv3a")
 14:15/0 = 0
 15:15/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_4d4qa"]
-physics_layer_0/collision_layer = 7
-physics_layer_0/collision_mask = 7
-sources/0 = SubResource("TileSetAtlasSource_xy4tn")
+[sub_resource type="TileSet" id="TileSet_4k5bj"]
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_4ou0f")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v38iq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp87d"]
 size = Vector2(84.890495, 36.94084)
 
-[node name="LevelRoot" type="Node2D" unique_id=890056521]
+[node name="Level2" type="Node2D" unique_id=965846572]
 scale = Vector2(3, 3)
 
-[node name="Arrows" type="Node2D" parent="." unique_id=1138727819]
-scale = Vector2(0.5, 0.5)
-
-[node name="LevelController" type="Node2D" parent="." unique_id=200563611 node_paths=PackedStringArray("pipes", "ladder_builder")]
-script = ExtResource("1_crycw")
-enemy_queue = Array[PackedScene]([ExtResource("5_v8kj3"), ExtResource("5_v8kj3"), ExtResource("5_v8kj3"), ExtResource("5_v8kj3"), ExtResource("5_v8kj3"), ExtResource("5_v8kj3"), ExtResource("5_v8kj3")])
+[node name="LevelController" type="Node2D" parent="." unique_id=1429202358 node_paths=PackedStringArray("pipes")]
+script = ExtResource("1_rmy57")
+enemy_queue = Array[PackedScene]([ExtResource("2_qulpo"), ExtResource("2_qulpo"), ExtResource("2_qulpo"), ExtResource("2_qulpo"), ExtResource("2_qulpo"), ExtResource("2_qulpo"), ExtResource("2_qulpo")])
 spawn_interval = 0.3
-pipes = [NodePath("../Pipe1/PipeSpawnPoint")]
-ladder_builder = NodePath("../LadderBuilder")
+pipes = [NodePath("../Pipe1")]
 
-[node name="LadderContainer" type="Node2D" parent="." unique_id=256206591]
-position = Vector2(216.33334, 212.66667)
-
-[node name="LadderBuilder" type="Node2D" parent="." unique_id=1877225268 node_paths=PackedStringArray("ladder_container")]
+[node name="LadderBuilder" type="Node2D" parent="." unique_id=1452581077]
 position = Vector2(216.333, 212.75)
-script = ExtResource("1_i2041")
-ladder_piece_scene = ExtResource("4_xy4tn")
-ladder_container = NodePath("../LadderContainer")
+script = ExtResource("3_jifot")
+ladder_piece_scene = ExtResource("4_3opl0")
 
-[node name="ClimbTrigger" type="Area2D" parent="LadderBuilder" unique_id=1505597229]
+[node name="ClimbTrigger" type="Area2D" parent="LadderBuilder" unique_id=1390815792]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderBuilder/ClimbTrigger" unique_id=1452040877]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderBuilder/ClimbTrigger" unique_id=1832911506]
 position = Vector2(0, -65.04166)
 scale = Vector2(0.5333333, 1)
-shape = SubResource("RectangleShape2D_xy4tn")
+shape = SubResource("RectangleShape2D_lwvnx")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1824294067]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1715354435]
 tile_map_data = PackedByteArray("AAAAAA4AAAAEAAUAAAABAA4AAAAEAAUAAAACAA4AAAAEAAUAAAADAA4AAAAEAAUAAAAEAA4AAAAEAAUAAAAFAA4AAAAEAAUAAAAGAA4AAAAEAAUAAAAHAA4AAAAEAAUAAAAIAA4AAAAEAAUAAAAJAA4AAAAEAAUAAAAKAA4AAAAEAAUAAAALAA4AAAAEAAUAAAAMAA4AAAAEAAUAAAANAA4AAAAEAAUAAAAOAA4AAAAEAAUAAAAPAA4AAAAEAAUAAAAQAA4AAAAEAAUAAAARAA4AAAAEAAUAAAASAA4AAAAEAAUAAAATAA4AAAAEAAUAAAAUAA4AAAAEAAUAAAAVAA4AAAAEAAUAAAAWAA4AAAAEAAUAAAAXAA4AAAAEAAUAAAAYAA4AAAAEAAUAAAAZAA4AAAAEAAUAAAAaAA4AAAAEAAUAAAAAAA0AAAAEAAUAAAAAAAwAAAAEAAUAAAAAAAsAAAAEAAUAAAAAAAoAAAAEAAUAAAAAAAkAAAAEAAUAAAAAAAgAAAAEAAUAAAAAAAcAAAAEAAUAAAAAAAYAAAAEAAUAAAAAAAUAAAAEAAUAAAAAAAQAAAAEAAUAAAAAAAMAAAAEAAUAAAAAAAIAAAAEAAUAAAAAAAEAAAAEAAUAAAAaAA0AAAAEAAUAAAAaAAwAAAAEAAUAAAAaAAsAAAAEAAUAAAAaAAoAAAAEAAUAAAAaAAkAAAAEAAUAAAAaAAgAAAAEAAUAAAAaAAcAAAAEAAUAAAAaAAYAAAAEAAUAAAAaAAUAAAAEAAUAAAAaAAQAAAAEAAUAAAAaAAMAAAAEAAUAAAAAAAAAAAAEAAUAAAABAAAAAAAEAAUAAAACAAAAAAAEAAUAAAADAAAAAAAEAAUAAAAEAAAAAAAEAAUAAAAFAAAAAAAEAAUAAAAGAAAAAAAEAAUAAAAHAAAAAAAEAAUAAAAIAAAAAAAEAAUAAAAJAAAAAAAEAAUAAAAKAAAAAAAEAAUAAAALAAAAAAAEAAUAAAAMAAAAAAAEAAUAAAANAAAAAAAEAAUAAAAOAAAAAAAEAAUAAAAPAAAAAAAEAAUAAAAQAAAAAAAEAAUAAAARAAAAAAAEAAUAAAASAAAAAAAEAAUAAAATAAAAAAAEAAUAAAAUAAAAAAAEAAUAAAAVAAAAAAAEAAUAAAAWAAAAAAAEAAUAAAAXAAAAAAAEAAUAAAAYAAAAAAAEAAUAAAAZAAAAAAAEAAUAAAAaAAAAAAAEAAUAAAAaAAEAAAAEAAUAAAAaAAIAAAAEAAUAAAA=")
-tile_set = SubResource("TileSet_4d4qa")
+tile_set = SubResource("TileSet_4k5bj")
 
-[node name="Player" parent="." unique_id=1082196993 node_paths=PackedStringArray("arrow_container") groups=["player"] instance=ExtResource("2_dopym")]
-position = Vector2(216.33334, 208.00005)
-collision_layer = 1
-collision_mask = 1
-next_level = "res://level2.tscn"
-arrow_container = NodePath("../Arrows")
+[node name="Player" parent="." unique_id=1082196993 groups=["player"] instance=ExtResource("6_s8oj7")]
+position = Vector2(216.33334, 208.00002)
+next_level = "res://level1.tscn"
 
-[node name="Exit" type="Sprite2D" parent="." unique_id=995186120]
-position = Vector2(216.33334, 51.999996)
+[node name="Exit" type="Sprite2D" parent="." unique_id=363427155]
+position = Vector2(216.33333, 51.999996)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_ootpb")
+texture = ExtResource("7_mw4xc")
 
-[node name="Pipe1" type="Sprite2D" parent="." unique_id=1996141689]
+[node name="Pipe1" type="Sprite2D" parent="." unique_id=555935265]
 z_index = 9
-position = Vector2(47, 192.00005)
+position = Vector2(47, 192.00002)
 scale = Vector2(2, 2)
-texture = ExtResource("4_v38iq")
+texture = ExtResource("8_r8rrl")
 
-[node name="PipeSpawnPoint" type="Node2D" parent="Pipe1" unique_id=1715690181]
+[node name="PipeSpawnPoint" type="Node2D" parent="Pipe1" unique_id=1627950786]
 position = Vector2(-8.5, -4.50001)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Pipe1" unique_id=1348382395]
+[node name="RigidBody2D" type="RigidBody2D" parent="Pipe1" unique_id=1362056299]
 collision_layer = 2
 collision_mask = 2
 freeze = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pipe1/RigidBody2D" unique_id=1743790260]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pipe1/RigidBody2D" unique_id=570069342]
 position = Vector2(-5.0996647, 7.9999847)
 rotation = -3.1415925
 scale = Vector2(0.20653269, 0.03170961)
-shape = SubResource("RectangleShape2D_v38iq")
+shape = SubResource("RectangleShape2D_hp87d")
