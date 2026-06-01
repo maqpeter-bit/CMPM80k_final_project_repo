@@ -71,7 +71,7 @@ ladder_scene = ExtResource("2_dqm35")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1563062416 groups=["enemies"]]
 sprite_frames = SubResource("SpriteFrames_3o8ru")
 autoplay = "default"
-frame_progress = 0.7835251
+frame_progress = 0.09291839
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=58610119 groups=["enemies"]]
