@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bw2kxw2ct2cta" path="res://ladder_pickup.gd" id="1_dadsl"]
 [ext_resource type="Texture2D" uid="uid://cjjssv6xrc21f" path="res://ArtAssets/Extras/Ladder.png" id="1_tcqp8"]
+[ext_resource type="AudioStream" uid="uid://dpbp8fywrajje" path="res://Sounds/collectItem.wav" id="3_f8qa4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcqp8"]
 
@@ -24,3 +25,6 @@ shape = SubResource("RectangleShape2D_tcqp8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2138342679]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_tcqp8")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=586793803]
+stream = ExtResource("3_f8qa4")

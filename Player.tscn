@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cqq66e0q4nwub"]
 
 [ext_resource type="Script" uid="uid://bs1rb6sn211hf" path="res://Scripts/player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://d0t0mbr4k58j4" path="res://ArtAssets/Player/PlayerPlaceholder.png" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://b0cp6aa82cix1" path="res://ArtAssets/Player/NewPlayerPlaceholder.png" id="2_e80uo"]
 [ext_resource type="AudioStream" uid="uid://dsch3fkirg57p" path="res://Sounds/bowShoot.wav" id="3_e80uo"]
 [ext_resource type="AudioStream" uid="uid://d0iirh8qqsjt7" path="res://Sounds/playerJump.wav" id="3_kne1u"]
+[ext_resource type="AudioStream" uid="uid://nb2fsyft5742" path="res://Sounds/playerHurt.wav" id="4_cxr5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 size = Vector2(40, 126)
@@ -15,8 +16,9 @@ collision_mask = 5
 script = ExtResource("1_kpjcp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=682247892]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_xhfnw")
+position = Vector2(-6.7762636e-21, 4)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("2_e80uo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=507559346]
 position = Vector2(1, -1)
@@ -24,6 +26,9 @@ shape = SubResource("RectangleShape2D_kpjcp")
 
 [node name="ArrowShootSound" type="AudioStreamPlayer2D" parent="." unique_id=118382010]
 stream = ExtResource("3_e80uo")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=572612733]
+stream = ExtResource("4_cxr5p")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1596035327]
 stream = ExtResource("3_kne1u")

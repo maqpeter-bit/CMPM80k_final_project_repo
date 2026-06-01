@@ -57,6 +57,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85bxh"]
 size = Vector2(64, 51)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqm35"]
+size = Vector2(62.857147, 51.428574)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1335456853 groups=["enemies"]]
 z_index = 1
 scale = Vector2(0.35, 0.35)
@@ -74,3 +77,10 @@ speed_scale = 2.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=58610119 groups=["enemies"]]
 position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_85bxh")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1228627923]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1579293698]
+position = Vector2(-3.4059785e-06, 5.71428)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_dqm35")

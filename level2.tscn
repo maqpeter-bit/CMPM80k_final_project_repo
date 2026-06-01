@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cqq66e0q4nwub" path="res://Player.tscn" id="6_s8oj7"]
 [ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="7_mw4xc"]
 [ext_resource type="Texture2D" uid="uid://s5b577tye2of" path="res://ArtAssets/Extras/Pipe.png" id="8_r8rrl"]
+[ext_resource type="Texture2D" uid="uid://c2sd8vym4yc10" path="res://ArtAssets/Extras/HurtVisual.png" id="9_qulpo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmy57"]
 size = Vector2(20, 150.08333)
@@ -471,6 +472,56 @@ sources/0 = SubResource("TileSetAtlasSource_qulpo")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3opl0"]
 size = Vector2(84.890495, 36.94084)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_usj0q"]
+atlas = ExtResource("9_qulpo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j5gb"]
+atlas = ExtResource("9_qulpo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx85b"]
+atlas = ExtResource("9_qulpo")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx44q"]
+atlas = ExtResource("9_qulpo")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8vhr"]
+atlas = ExtResource("9_qulpo")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqrsh"]
+atlas = ExtResource("9_qulpo")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jifot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usj0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j5gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx85b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx44q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8vhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqrsh")
+}],
+"loop": false,
+"name": &"flash",
+"speed": 5.0
+}]
+
 [node name="Level2" type="Node2D" unique_id=1870481191]
 scale = Vector2(3, 3)
 
@@ -557,3 +608,11 @@ position = Vector2(-5.0996647, 7.9999847)
 rotation = -3.1415925
 scale = Vector2(0.20653269, 0.03170961)
 shape = SubResource("RectangleShape2D_3opl0")
+
+[node name="HurtVisual" type="AnimatedSprite2D" parent="." unique_id=281207281 groups=["hurt_visual"]]
+z_index = 99
+position = Vector2(209.33334, 123.833336)
+scale = Vector2(14.104167, 8.03125)
+sprite_frames = SubResource("SpriteFrames_jifot")
+animation = &"flash"
+speed_scale = 3.0

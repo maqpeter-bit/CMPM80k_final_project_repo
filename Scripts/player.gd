@@ -3,13 +3,41 @@ extends CharacterBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var arrowShoot_sound: AudioStreamPlayer2D = $ArrowShootSound
+@onready var hurtSound: AudioStreamPlayer2D = $HurtSound
+
 @onready var ArrowScene = preload("res://arrow.tscn")
 @export var next_level: String
 @export var arrow_container: Node
-const SPEED = 300.0
+const SPEED = 360.0
 const JUMP_VELOCITY = -550.0
 var climbing_ladder := false
 var climb_target_y := 100.0
+var playerHealth := 5	
+var invulnerable := false
+
+func take_damage(amount: int):
+	if invulnerable:
+		return
+
+	playerHealth -= amount
+
+	var hurt_visual = get_tree().get_first_node_in_group("hurt_visual")
+	if hurt_visual:
+		hurt_visual.play("flash")
+	hurtSound.play()
+	invulnerable = true
+
+	if playerHealth <= 0:
+		die()
+		return	
+
+	await get_tree().create_timer(1.0).timeout
+	invulnerable = false
+
+func die():
+	print("Player died")
+	get_tree().reload_current_scene()
+	# Add death logic here
 
 func start_ladder_climb(target_y: float):
 	climbing_ladder = true
@@ -38,7 +66,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("shootArrow"):
 		arrowShoot_sound.play()
 		shoot_arrow()
-	
+		
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
@@ -56,10 +85,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	# If the player is facing right
 	if mouse_pos > global_position: 
-		sprite_2d.flip_v = false
+		sprite_2d.flip_h = false
 		
 	elif mouse_pos < global_position: 
-		sprite_2d.flip_v = true
+		sprite_2d.flip_h = true
 		
 func shoot_arrow():
 	var arrow = ArrowScene.instantiate()
