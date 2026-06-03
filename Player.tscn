@@ -5,23 +5,107 @@
 [ext_resource type="AudioStream" uid="uid://dsch3fkirg57p" path="res://Sounds/bowShoot.wav" id="3_e80uo"]
 [ext_resource type="AudioStream" uid="uid://d0iirh8qqsjt7" path="res://Sounds/playerJump.wav" id="3_kne1u"]
 [ext_resource type="AudioStream" uid="uid://nb2fsyft5742" path="res://Sounds/playerHurt.wav" id="4_cxr5p"]
+[ext_resource type="Texture2D" uid="uid://dsk7eyui5vxhl" path="res://ArtAssets/Player/playerCooldownVisual.png" id="6_dtqjt"]
+[ext_resource type="Script" uid="uid://cn1tdmacmgjiu" path="res://Scripts/item_cooldown.gd" id="7_dtqjt"]
+[ext_resource type="Texture2D" uid="uid://f6tj6pu3nqi3" path="res://ArtAssets/Extras/SwordSwing.png" id="8_5ncpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
-size = Vector2(40, 126)
+size = Vector2(40, 342.85712)
 
-[node name="Player" type="CharacterBody2D" unique_id=1082196993]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi0c6"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp6x6"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tkgg"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6ohk"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oudfo"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6rpx"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3kul"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jatw7"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv870"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efikj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi0c6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp6x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tkgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6ohk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oudfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6rpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3kul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jatw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv870")
+}],
+"loop": false,
+"name": &"sworb",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ncpa"]
+size = Vector2(86.21485, 353.98175)
+
+[node name="Player" type="CharacterBody2D" unique_id=1082196993 node_paths=PackedStringArray("hammer_sprite_2d", "hammerHitbox", "sword_hitbox", "sword_collision", "arrow_container") groups=["player"]]
 scale = Vector2(0.25, 0.25)
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_kpjcp")
+hammer_sprite_2d = NodePath("HammerHitBox/HammerVisual")
+hammerHitbox = NodePath("HammerHitBox")
+sword_hitbox = NodePath("HammerHitBox/SwordArea2D")
+sword_collision = NodePath("HammerHitBox/SwordArea2D/SworbCollision")
+arrow_container = NodePath("HammerHitBox/HammerVisual")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=682247892]
 position = Vector2(-6.7762636e-21, 4)
 scale = Vector2(1.75, 1.75)
 texture = ExtResource("2_e80uo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=507559346]
-position = Vector2(1, -1)
+[node name="playerCollision" type="CollisionShape2D" parent="." unique_id=507559346]
+position = Vector2(1, 4.000002)
+rotation = -3.1415925
+scale = Vector2(0.796, -0.35)
 shape = SubResource("RectangleShape2D_kpjcp")
 
 [node name="ArrowShootSound" type="AudioStreamPlayer2D" parent="." unique_id=118382010]
@@ -32,3 +116,41 @@ stream = ExtResource("4_cxr5p")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1596035327]
 stream = ExtResource("3_kne1u")
+
+[node name="ItemCooldown" type="TextureProgressBar" parent="." unique_id=1699456745 node_paths=PackedStringArray("player")]
+offset_left = -32.0
+offset_top = -124.0
+offset_bottom = -92.0
+scale = Vector2(2, 2)
+value = 100.0
+fill_mode = 5
+texture_progress = ExtResource("6_dtqjt")
+script = ExtResource("7_dtqjt")
+player = NodePath("..")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2100243548]
+
+[node name="playerCollision2" type="CollisionShape2D" parent="Area2D" unique_id=1503291806]
+position = Vector2(0.20399988, 5.4000025)
+scale = Vector2(0.79361176, 0.28250062)
+shape = SubResource("RectangleShape2D_kpjcp")
+
+[node name="HammerHitBox" type="Node2D" parent="." unique_id=1390348178]
+
+[node name="HammerVisual" type="AnimatedSprite2D" parent="HammerHitBox" unique_id=690752565]
+position = Vector2(88, 0)
+scale = Vector2(1.1399994, 2.019998)
+sprite_frames = SubResource("SpriteFrames_efikj")
+animation = &"sworb"
+frame = 8
+frame_progress = 1.0
+speed_scale = 4.0
+
+[node name="SwordArea2D" type="Area2D" parent="HammerHitBox" unique_id=885949179 groups=["sword"]]
+position = Vector2(20, 0)
+scale = Vector2(2.2799988, 0.99999934)
+
+[node name="SworbCollision" type="CollisionShape2D" parent="HammerHitBox/SwordArea2D" unique_id=1861035048]
+position = Vector2(21.92984, 6.000004)
+scale = Vector2(0.79361135, 0.28250062)
+shape = SubResource("RectangleShape2D_5ncpa")

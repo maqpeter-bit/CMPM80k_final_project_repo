@@ -10,8 +10,11 @@ func _ready() -> void:
 	
 func _on_body_entered(body):
 	if body.is_in_group("enemies"):
-		body.getHurt()
-		queue_free()
+		return
+		#body.getHurt()
+func destroy():
+	queue_free()
+
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

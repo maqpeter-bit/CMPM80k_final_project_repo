@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfe6fr5gasob0"]
 
-[ext_resource type="Script" uid="uid://ovwbl0iwprn8" path="res://horde_1.gd" id="1_85bxh"]
+[ext_resource type="Script" uid="uid://ovwbl0iwprn8" path="res://Scripts/horde_1.gd" id="1_85bxh"]
 [ext_resource type="Texture2D" uid="uid://hmt201mqg2l7" path="res://ArtAssets/Hordes/Horde1 (ladder)/LadderHorde.png" id="1_nlqxx"]
 [ext_resource type="PackedScene" uid="uid://gc0dvvyagm6d" path="res://ladder_pickup.tscn" id="2_dqm35"]
 

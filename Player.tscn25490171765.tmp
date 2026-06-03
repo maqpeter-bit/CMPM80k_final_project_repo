@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cqq66e0q4nwub"]
+
+[ext_resource type="Script" uid="uid://bs1rb6sn211hf" path="res://Scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://b0cp6aa82cix1" path="res://ArtAssets/Player/NewPlayerPlaceholder.png" id="2_e80uo"]
+[ext_resource type="AudioStream" uid="uid://dsch3fkirg57p" path="res://Sounds/bowShoot.wav" id="3_e80uo"]
+[ext_resource type="AudioStream" uid="uid://d0iirh8qqsjt7" path="res://Sounds/playerJump.wav" id="3_kne1u"]
+[ext_resource type="AudioStream" uid="uid://nb2fsyft5742" path="res://Sounds/playerHurt.wav" id="4_cxr5p"]
+[ext_resource type="Texture2D" uid="uid://dsk7eyui5vxhl" path="res://ArtAssets/Player/playerCooldownVisual.png" id="6_dtqjt"]
+[ext_resource type="Script" uid="uid://cn1tdmacmgjiu" path="res://Scripts/item_cooldown.gd" id="7_dtqjt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+size = Vector2(40, 342.85712)
+
+[node name="Player" type="CharacterBody2D" unique_id=1082196993 groups=["player"]]
+scale = Vector2(0.25, 0.25)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_kpjcp")
+next_level = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=682247892]
+position = Vector2(-6.7762636e-21, 4)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("2_e80uo")
+
+[node name="playerCollision" type="CollisionShape2D" parent="." unique_id=507559346 groups=["player"]]
+position = Vector2(1, 4.000002)
+rotation = -3.1415925
+scale = Vector2(0.796, -0.35)
+shape = SubResource("RectangleShape2D_kpjcp")
+
+[node name="ArrowShootSound" type="AudioStreamPlayer2D" parent="." unique_id=118382010]
+stream = ExtResource("3_e80uo")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=572612733]
+stream = ExtResource("4_cxr5p")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1596035327]
+stream = ExtResource("3_kne1u")
+
+[node name="ItemCooldown" type="TextureProgressBar" parent="." unique_id=1699456745 node_paths=PackedStringArray("player")]
+offset_left = -32.0
+offset_top = -124.0
+offset_bottom = -92.0
+scale = Vector2(2, 2)
+value = 100.0
+fill_mode = 5
+texture_progress = ExtResource("6_dtqjt")
+script = ExtResource("7_dtqjt")
+player = NodePath("..")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2100243548 groups=["player"]]
+
+[node name="playerCollision2" type="CollisionShape2D" parent="Area2D" unique_id=1503291806]
+position = Vector2(0.20399988, 5.4000025)
+scale = Vector2(0.79361176, 0.28250062)
+shape = SubResource("RectangleShape2D_kpjcp")
+
+[node name="HammerHitBox" type="Node2D" parent="." unique_id=1390348178]
+
+[node name="SwordArea2D" type="Area2D" parent="HammerHitBox" unique_id=885949179 groups=["sword"]]
+position = Vector2(20, 0)
+scale = Vector2(2.2799988, 0.99999934)
+
+[node name="playerCollision2" type="CollisionShape2D" parent="HammerHitBox/SwordArea2D" unique_id=1861035048]
+position = Vector2(0.20399857, 5.4000025)
+scale = Vector2(0.79361176, 0.28250062)
+shape = SubResource("RectangleShape2D_kpjcp")

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cc3wayadl4n8m"]
 
-[ext_resource type="Script" uid="uid://d208vybtkr5fj" path="res://level_controller.gd" id="1_crycw"]
-[ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://ladder_builder.gd" id="1_i2041"]
+[ext_resource type="Script" uid="uid://d208vybtkr5fj" path="res://Scripts/level_controller.gd" id="1_crycw"]
+[ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://Scripts/ladder_builder.gd" id="1_i2041"]
 [ext_resource type="Texture2D" uid="uid://cvsahamjkdpix" path="res://ArtAssets/Tilemap/GroundPlaceholder.png" id="1_jwv3a"]
 [ext_resource type="PackedScene" uid="uid://cqq66e0q4nwub" path="res://Player.tscn" id="2_dopym"]
 [ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="3_ootpb"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="4_xy4tn"]
 [ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://Horde1.tscn" id="5_v8kj3"]
 [ext_resource type="Texture2D" uid="uid://c2sd8vym4yc10" path="res://ArtAssets/Extras/HurtVisual.png" id="9_usj0q"]
+[ext_resource type="Script" uid="uid://dm76g4rf0f7tm" path="res://ui_controller.gd" id="10_eqrsh"]
+[ext_resource type="Texture2D" uid="uid://d3sjr74pir63g" path="res://ArtAssets/Extras/templatePlaceholder.png" id="11_mx85b"]
+[ext_resource type="Texture2D" uid="uid://bff36o32drus0" path="res://ArtAssets/Extras/templatePlaceholder2.png" id="12_n8vhr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy4tn"]
 size = Vector2(20, 150.08333)
@@ -522,6 +525,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx85b"]
+bg_color = Color(0.92057854, 0.097221605, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5j5gb"]
+bg_color = Color(3.3691526e-07, 0.7277015, 0.11157543, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8vhr"]
+bg_color = Color(0.57005006, 0.61303777, 0.58654916, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx44q"]
+bg_color = Color(0.13527921, 0.068288736, 0.07668204, 1)
+
 [node name="LevelRoot" type="Node2D" unique_id=890056521]
 scale = Vector2(3, 3)
 
@@ -530,7 +545,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="LevelController" type="Node2D" parent="." unique_id=200563611 node_paths=PackedStringArray("pipes", "ladder_builder")]
 script = ExtResource("1_crycw")
-enemy_queue = Array[PackedScene]([ExtResource("5_v8kj3"), ExtResource("5_v8kj3"), ExtResource("5_v8kj3"), ExtResource("5_v8kj3"), ExtResource("5_v8kj3"), ExtResource("5_v8kj3"), ExtResource("5_v8kj3")])
+enemy_queue = Array[PackedScene]([ExtResource("5_v8kj3")])
 spawn_interval = 0.3
 pipes = [NodePath("../Pipe1/PipeSpawnPoint")]
 ladder_builder = NodePath("../LadderBuilder")
@@ -555,7 +570,7 @@ shape = SubResource("RectangleShape2D_xy4tn")
 tile_map_data = PackedByteArray("AAAAAA4AAAAEAAUAAAABAA4AAAAEAAUAAAACAA4AAAAEAAUAAAADAA4AAAAEAAUAAAAEAA4AAAAEAAUAAAAFAA4AAAAEAAUAAAAGAA4AAAAEAAUAAAAHAA4AAAAEAAUAAAAIAA4AAAAEAAUAAAAJAA4AAAAEAAUAAAAKAA4AAAAEAAUAAAALAA4AAAAEAAUAAAAMAA4AAAAEAAUAAAANAA4AAAAEAAUAAAAOAA4AAAAEAAUAAAAPAA4AAAAEAAUAAAAQAA4AAAAEAAUAAAARAA4AAAAEAAUAAAASAA4AAAAEAAUAAAATAA4AAAAEAAUAAAAUAA4AAAAEAAUAAAAVAA4AAAAEAAUAAAAWAA4AAAAEAAUAAAAXAA4AAAAEAAUAAAAYAA4AAAAEAAUAAAAZAA4AAAAEAAUAAAAaAA4AAAAEAAUAAAAAAA0AAAAEAAUAAAAAAAwAAAAEAAUAAAAAAAsAAAAEAAUAAAAAAAoAAAAEAAUAAAAAAAkAAAAEAAUAAAAAAAgAAAAEAAUAAAAAAAcAAAAEAAUAAAAAAAYAAAAEAAUAAAAAAAUAAAAEAAUAAAAAAAQAAAAEAAUAAAAAAAMAAAAEAAUAAAAAAAIAAAAEAAUAAAAAAAEAAAAEAAUAAAAaAA0AAAAEAAUAAAAaAAwAAAAEAAUAAAAaAAsAAAAEAAUAAAAaAAoAAAAEAAUAAAAaAAkAAAAEAAUAAAAaAAgAAAAEAAUAAAAaAAcAAAAEAAUAAAAaAAYAAAAEAAUAAAAaAAUAAAAEAAUAAAAaAAQAAAAEAAUAAAAaAAMAAAAEAAUAAAAAAAAAAAAEAAUAAAABAAAAAAAEAAUAAAACAAAAAAAEAAUAAAADAAAAAAAEAAUAAAAEAAAAAAAEAAUAAAAFAAAAAAAEAAUAAAAGAAAAAAAEAAUAAAAHAAAAAAAEAAUAAAAIAAAAAAAEAAUAAAAJAAAAAAAEAAUAAAAKAAAAAAAEAAUAAAALAAAAAAAEAAUAAAAMAAAAAAAEAAUAAAANAAAAAAAEAAUAAAAOAAAAAAAEAAUAAAAPAAAAAAAEAAUAAAAQAAAAAAAEAAUAAAARAAAAAAAEAAUAAAASAAAAAAAEAAUAAAATAAAAAAAEAAUAAAAUAAAAAAAEAAUAAAAVAAAAAAAEAAUAAAAWAAAAAAAEAAUAAAAXAAAAAAAEAAUAAAAYAAAAAAAEAAUAAAAZAAAAAAAEAAUAAAAaAAAAAAAEAAUAAAAaAAEAAAAEAAUAAAAaAAIAAAAEAAUAAAA=")
 tile_set = SubResource("TileSet_4d4qa")
 
-[node name="Player" parent="." unique_id=1082196993 node_paths=PackedStringArray("arrow_container") groups=["player"] instance=ExtResource("2_dopym")]
+[node name="Player" parent="." unique_id=1082196993 node_paths=PackedStringArray("arrow_container") instance=ExtResource("2_dopym")]
 position = Vector2(216.33334, 208.00005)
 collision_layer = 1
 collision_mask = 1
@@ -594,3 +609,61 @@ scale = Vector2(14.104167, 8.03125)
 sprite_frames = SubResource("SpriteFrames_rjtee")
 animation = &"flash"
 speed_scale = 3.0
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1055725370]
+
+[node name="UIController" type="Node2D" parent="CanvasLayer" unique_id=1819813918 node_paths=PackedStringArray("player", "healthBar", "Utility1Icon", "Utility2Icon", "Utility1Bar", "Utility2Bar")]
+script = ExtResource("10_eqrsh")
+player = NodePath("../../Player")
+healthBar = NodePath("HealthBar")
+Utility1Icon = NodePath("Utility1Sprite")
+Utility2Icon = NodePath("Utility2Sprite2")
+Utility1Bar = NodePath("Util#1")
+Utility2Bar = NodePath("Util#2")
+UtilityBowTexture = ExtResource("11_mx85b")
+UtilityHammerTexture = ExtResource("12_n8vhr")
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/UIController" unique_id=980315607]
+offset_right = 307.0
+offset_bottom = 42.0
+tooltip_text = "HEALTH:"
+theme_override_colors/font_color = Color(0.9490196, 1, 0.94509804, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/background = SubResource("StyleBoxFlat_mx85b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5j5gb")
+value = 100.0
+
+[node name="Util#1" type="ProgressBar" parent="CanvasLayer/UIController" unique_id=757461167]
+offset_left = 137.0
+offset_top = 68.0
+offset_right = 302.0
+offset_bottom = 110.0
+scale = Vector2(1, 0.7599994)
+tooltip_text = "HEALTH:"
+theme_override_colors/font_color = Color(0.9490196, 1, 0.94509804, 0)
+theme_override_styles/background = SubResource("StyleBoxFlat_n8vhr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hx44q")
+value = 100.0
+fill_mode = 1
+
+[node name="Utility1Sprite" type="Sprite2D" parent="CanvasLayer/UIController" unique_id=250446733]
+position = Vector2(90, 84)
+texture = ExtResource("11_mx85b")
+
+[node name="Util#2" type="ProgressBar" parent="CanvasLayer/UIController" unique_id=487610865]
+offset_left = 137.0
+offset_top = 143.0
+offset_right = 302.0
+offset_bottom = 185.0
+scale = Vector2(1, 0.7599994)
+tooltip_text = "HEALTH:"
+theme_override_colors/font_color = Color(0.9490196, 1, 0.94509804, 0)
+theme_override_styles/background = SubResource("StyleBoxFlat_n8vhr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hx44q")
+value = 100.0
+fill_mode = 1
+
+[node name="Utility2Sprite2" type="Sprite2D" parent="CanvasLayer/UIController" unique_id=1881625861]
+position = Vector2(90, 159)
+texture = ExtResource("11_mx85b")

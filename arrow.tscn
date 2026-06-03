@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bv1ptppmmi3gf"]
 
-[ext_resource type="Script" uid="uid://cotardxskjv02" path="res://arrow.gd" id="1_2ndhl"]
+[ext_resource type="Script" uid="uid://cotardxskjv02" path="res://Scripts/arrow.gd" id="1_2ndhl"]
 [ext_resource type="Texture2D" uid="uid://cxsrgbtvvwoo7" path="res://ArtAssets/Extras/Arrow.png" id="2_acd0x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a6ax"]
-size = Vector2(8.5, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ndhl"]
+size = Vector2(20.999996, 8.999999)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ndhl"]
 atlas = ExtResource("2_acd0x")
@@ -42,6 +42,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a6ax"]
+size = Vector2(8.5, 12)
+
 [node name="Arrow" type="Area2D" unique_id=709124974]
 collision_layer = 2
 collision_mask = 2
@@ -50,10 +53,10 @@ gravity = 9.8
 script = ExtResource("1_2ndhl")
 mass = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=661411018]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1190284146]
 position = Vector2(-4, 0)
-scale = Vector2(-2.5, 0.75)
-shape = SubResource("RectangleShape2D_6a6ax")
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_2ndhl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=340457247]
 position = Vector2(-15, 0)
@@ -62,3 +65,11 @@ sprite_frames = SubResource("SpriteFrames_fo0gb")
 autoplay = "default"
 frame_progress = 0.285878
 speed_scale = 2.5
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1808477728 groups=["arrow"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=661411018]
+position = Vector2(-4, 0)
+rotation = 3.1415927
+scale = Vector2(2.5, -0.75)
+shape = SubResource("RectangleShape2D_6a6ax")
