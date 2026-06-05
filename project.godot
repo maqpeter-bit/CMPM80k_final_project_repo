@@ -26,6 +26,7 @@ enemies=""
 arrow=""
 player=""
 sword=""
+wall=""
 
 [input]
 

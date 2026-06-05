@@ -12,6 +12,8 @@ class_name Player
 
 
 @onready var ArrowScene = preload("res://arrow.tscn")
+@onready var wallScene = preload("res://wall.tscn")
+
 @export var next_level: String
 @export var arrow_container: Node
 const SPEED = 360.0
@@ -30,6 +32,7 @@ var UTIL_SELECTED_ITEM_1 := "bow" # Utility 1 contains either bow or sword
 var UTIL_SELECTED_ITEM_2 := "wall" # Utility 2 contains building stuff
 
 var Utility1Options := ["bow", "hammer"]
+var Utility2Options := ["wall", "trap", "fan"]
 var item1Index = 0
 var item2Index = 0
 
@@ -112,6 +115,10 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("useUtility2") && Utility2Cooldown <= 0:
 		print("Utility 2 used")
+		if UTIL_SELECTED_ITEM_2 == "wall":
+			Utility2Cooldown = wallMaxCooldown
+			Utility2MAXCooldown = wallMaxCooldown
+			placeWall()
 		
 	if Input.is_action_just_pressed("SwapUtility"):
 		item1Index += 1
@@ -172,6 +179,16 @@ func hammerAttack():
 	await get_tree().create_timer(0.15).timeout
 
 	sword_collision.disabled = true
+
+func placeWall():
+	print("placed wall")
+	var direction = (get_global_mouse_position() - global_position).normalized()
+	var wall = wallScene.instantiate()
+	arrow_container.add_child(wall)
+
+	wall.global_position = global_position
+	
+
 
 
 func level_complete():

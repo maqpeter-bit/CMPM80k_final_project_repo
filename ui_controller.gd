@@ -25,12 +25,6 @@ func _process(delta: float) -> void:
 	Utility1Bar.value = player.Utility1Cooldown
 	Utility2Bar.value = player.Utility2Cooldown
 	
-	print(
-		"Cooldown=", player.Utility1Cooldown,
-		" Max=", player.Utility1MAXCooldown,
-		" BarValue=", Utility1Bar.value,
-		" BarMax=", Utility1Bar.max_value
-	)
 	if player.UTIL_SELECTED_ITEM_1 == "bow":
 		Utility1Icon.texture = UtilityBowTexture
 	else:

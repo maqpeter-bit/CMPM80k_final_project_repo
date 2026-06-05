@@ -39,6 +39,11 @@ func _on_hurtbox_area_entered(area):
 		var arrow = area.get_parent()
 		arrow.destroy()
 	
+	if area.is_in_group("wall"):
+		var wall = area.get_parent()
+		wall.wallTakeDamage(1)
+		print("I damaged teh wall")
+	
 		
 
 func _on_hurtbox_area_exited(area):
