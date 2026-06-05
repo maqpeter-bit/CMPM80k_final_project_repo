@@ -17,7 +17,7 @@ class_name Player
 @export var next_level: String
 @export var arrow_container: Node
 const SPEED = 360.0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -700.0
 var climbing_ladder := false
 var climb_target_y := 100.0
 var maxPlayerHealth := 5
