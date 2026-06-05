@@ -5,11 +5,12 @@ var velocity = Vector2(0,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
+	$Area2D.area_entered.connect(_on_area_entered)
 	pass # Replace with function body.
 	
-func _on_body_entered(body):
-	if body.is_in_group("enemies"):
+func _on_area_entered(area):
+	if area.is_in_group("wall"):
+		destroy()
 		return
 		#body.getHurt()
 func destroy():
@@ -26,6 +27,7 @@ func _process(delta):
 
 # Sets initial velocity and enables change in position and rotation		
 func launch(initial_velocity : Vector2, startRotation : float):
+	
 	rotation = startRotation
 	launched = true
 	velocity = initial_velocity * 2

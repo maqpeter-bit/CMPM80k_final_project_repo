@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 	healthBar.value = player.playerHealth * 100 / player.maxPlayerHealth
 
 	Utility1Bar.max_value = player.Utility1MAXCooldown
+	Utility2Bar.max_value = player.Utility2MAXCooldown
 	Utility1Bar.value = player.Utility1Cooldown
 	Utility2Bar.value = player.Utility2Cooldown
 	

@@ -84,7 +84,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ncpa"]
-size = Vector2(86.21485, 353.98175)
+size = Vector2(44.21275, 353.98175)
 
 [node name="Player" type="CharacterBody2D" unique_id=1082196993 node_paths=PackedStringArray("hammer_sprite_2d", "hammerHitbox", "sword_hitbox", "sword_collision", "arrow_container") groups=["player"]]
 scale = Vector2(0.25, 0.25)
@@ -128,7 +128,7 @@ texture_progress = ExtResource("6_dtqjt")
 script = ExtResource("7_dtqjt")
 player = NodePath("..")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2100243548]
+[node name="Area2D" type="Area2D" parent="." unique_id=2100243548 groups=["player"]]
 
 [node name="playerCollision2" type="CollisionShape2D" parent="Area2D" unique_id=1503291806]
 position = Vector2(0.20399988, 5.4000025)
@@ -138,7 +138,7 @@ shape = SubResource("RectangleShape2D_kpjcp")
 [node name="HammerHitBox" type="Node2D" parent="." unique_id=1390348178]
 
 [node name="HammerVisual" type="AnimatedSprite2D" parent="HammerHitBox" unique_id=690752565]
-position = Vector2(88, 0)
+position = Vector2(56, 0)
 scale = Vector2(1.1399994, 2.019998)
 sprite_frames = SubResource("SpriteFrames_efikj")
 animation = &"sworb"
@@ -151,6 +151,6 @@ position = Vector2(20, 0)
 scale = Vector2(2.2799988, 0.99999934)
 
 [node name="SworbCollision" type="CollisionShape2D" parent="HammerHitBox/SwordArea2D" unique_id=1861035048]
-position = Vector2(21.92984, 6.000004)
-scale = Vector2(0.79361135, 0.28250062)
+position = Vector2(5.2631674, 6.000004)
+scale = Vector2(0.79361093, 0.28250062)
 shape = SubResource("RectangleShape2D_5ncpa")

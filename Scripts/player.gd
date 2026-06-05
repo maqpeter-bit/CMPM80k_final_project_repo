@@ -185,9 +185,17 @@ func placeWall():
 	var direction = (get_global_mouse_position() - global_position).normalized()
 	var wall = wallScene.instantiate()
 	arrow_container.add_child(wall)
+	direction.y = 0
+	var offset = 8
+	#wall.global_position.y = -100
+	if direction.x > 0:
+		wall.global_position = Vector2(global_position.x + offset, 800)
+	else:
+		wall.global_position = Vector2(global_position.x + (offset * -1), 800)
 
-	wall.global_position = global_position
 	
+
+
 
 
 

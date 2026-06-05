@@ -8,6 +8,8 @@ var jumpTimer:= 0.0
 var health = 3.0
 var player_in_hitbox = null # Only used for extra stuff. Ignore this
 var isTouchingPlayer = false
+var wall_in_hitbox = null
+var isTouchingWall = false
 var damage_timer = 0.0
 var knockback = Vector2.ZERO
 
@@ -40,8 +42,8 @@ func _on_hurtbox_area_entered(area):
 		arrow.destroy()
 	
 	if area.is_in_group("wall"):
-		var wall = area.get_parent()
-		wall.wallTakeDamage(1)
+		isTouchingWall = true
+		wall_in_hitbox = area
 		print("I damaged teh wall")
 	
 		
@@ -51,6 +53,11 @@ func _on_hurtbox_area_exited(area):
 		player_in_hitbox = null
 		if isTouchingPlayer:
 			isTouchingPlayer = false
+			
+	if area == wall_in_hitbox:
+		wall_in_hitbox = null
+		if isTouchingWall:
+			isTouchingWall = false
 
 
 		
@@ -77,7 +84,13 @@ func _physics_process(delta: float) -> void:
 	
 	if damage_timer > 0:
 		damage_timer -= delta
-
+	
+	if isTouchingWall:
+		if damage_timer <= 0:
+			var wall= wall_in_hitbox.get_parent()
+			wall.wallTakeDamage(1)
+			damage_timer = 1.0
+	
 	if isTouchingPlayer:
 		if damage_timer <= 0:
 			var player = player_in_hitbox.get_parent()
@@ -91,16 +104,18 @@ func reset_jump_timer():
 	jumpTimer = randf_range(1.0, 4.0)
 
 func getHurt():
+	health -= 1
 	var hurtSound = AudioStreamPlayer2D.new()
 	get_parent().add_child(hurtSound)
 	hurtSound.stream = preload("res://sounds/HORDEhurt.wav")
 	hurtSound.global_position = global_position
 	hurtSound.play()
-	health -= 1
-	if (health < 1):
-		var ladder = ladder_scene.instantiate()
-		get_parent().add_child(ladder)
-		$CollisionShape2D.set_deferred("disabled", true)
+	if health < 1:
+		call_deferred("_die")
 
-		ladder.global_position = global_position
-		queue_free()
+func _die():
+	var ladder = ladder_scene.instantiate()
+	get_parent().add_child(ladder)
+	ladder.global_position = global_position
+
+	queue_free()

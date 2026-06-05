@@ -10,7 +10,7 @@ size = Vector2(254, 888)
 size = Vector2(367, 890)
 
 [node name="Wall" type="RigidBody2D" unique_id=2108088269]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.15, 0.08)
 collision_layer = 7
 collision_mask = 7
 freeze = true
@@ -30,8 +30,6 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1890944653 groups=["wall"]]
-collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2021428533]
 position = Vector2(-5.5, 0)
