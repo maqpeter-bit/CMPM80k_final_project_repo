@@ -51,7 +51,6 @@ func _on_hurtbox_area_exited(area):
 		player_in_hitbox = null
 		if isTouchingPlayer:
 			isTouchingPlayer = false
-		print(isTouchingPlayer)
 
 
 		
