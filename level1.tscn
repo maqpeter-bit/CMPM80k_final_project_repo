@@ -475,6 +475,9 @@ sources/0 = SubResource("TileSetAtlasSource_xy4tn")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v38iq"]
 size = Vector2(84.890495, 36.94084)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx44q"]
+size = Vector2(21.166666, 32.166668)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_usj0q"]
 atlas = ExtResource("9_usj0q")
 region = Rect2(0, 0, 32, 32)
@@ -546,7 +549,9 @@ scale = Vector2(0.5, 0.5)
 [node name="LevelController" type="Node2D" parent="." unique_id=200563611 node_paths=PackedStringArray("pipes", "ladder_builder")]
 script = ExtResource("1_crycw")
 enemy_queue = Array[PackedScene]([ExtResource("5_v8kj3")])
-spawn_interval = 0.2
+spawn_intervalMin = 0.5
+spawn_intervalMax = 1.0
+bagRefillTime = 0.5
 pipes = [NodePath("../Pipe1/PipeSpawnPoint")]
 ladder_builder = NodePath("../LadderBuilder")
 
@@ -592,8 +597,8 @@ texture = ExtResource("4_v38iq")
 position = Vector2(-8.5, -4.50001)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Pipe1" unique_id=1348382395]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 freeze = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Pipe1/RigidBody2D" unique_id=1743790260]
@@ -601,6 +606,12 @@ position = Vector2(-5.0996647, 7.9999847)
 rotation = -3.1415925
 scale = Vector2(0.20653269, 0.03170961)
 shape = SubResource("RectangleShape2D_v38iq")
+
+[node name="Area2D" type="Area2D" parent="Pipe1" unique_id=1777582043 groups=["destroyArrow(barrier)"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe1/Area2D" unique_id=1490600358]
+position = Vector2(-5.749996, 0.08331299)
+shape = SubResource("RectangleShape2D_hx44q")
 
 [node name="HurtVisual" type="AnimatedSprite2D" parent="." unique_id=1672376153 groups=["hurt_visual"]]
 z_index = 99
@@ -611,9 +622,9 @@ animation = &"flash"
 speed_scale = 3.0
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1055725370]
+[node name="CanvasLayer (UI stuff)" type="CanvasLayer" parent="." unique_id=1055725370]
 
-[node name="UIController" type="Node2D" parent="CanvasLayer" unique_id=1819813918 node_paths=PackedStringArray("player", "healthBar", "Utility1Icon", "Utility2Icon", "Utility1Bar", "Utility2Bar")]
+[node name="UIController" type="Node2D" parent="CanvasLayer (UI stuff)" unique_id=1819813918 node_paths=PackedStringArray("player", "healthBar", "Utility1Icon", "Utility2Icon", "Utility1Bar", "Utility2Bar")]
 script = ExtResource("10_eqrsh")
 player = NodePath("../../Player")
 healthBar = NodePath("HealthBar")
@@ -624,7 +635,7 @@ Utility2Bar = NodePath("Util#2")
 UtilityBowTexture = ExtResource("11_mx85b")
 UtilityHammerTexture = ExtResource("12_n8vhr")
 
-[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/UIController" unique_id=980315607]
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer (UI stuff)/UIController" unique_id=980315607]
 offset_right = 307.0
 offset_bottom = 42.0
 tooltip_text = "HEALTH:"
@@ -634,7 +645,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_mx85b")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5j5gb")
 value = 100.0
 
-[node name="Util#1" type="ProgressBar" parent="CanvasLayer/UIController" unique_id=757461167]
+[node name="Util#1" type="ProgressBar" parent="CanvasLayer (UI stuff)/UIController" unique_id=757461167]
 offset_left = 137.0
 offset_top = 68.0
 offset_right = 302.0
@@ -647,11 +658,11 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_hx44q")
 value = 100.0
 fill_mode = 1
 
-[node name="Utility1Sprite" type="Sprite2D" parent="CanvasLayer/UIController" unique_id=250446733]
+[node name="Utility1Sprite" type="Sprite2D" parent="CanvasLayer (UI stuff)/UIController" unique_id=250446733]
 position = Vector2(90, 84)
 texture = ExtResource("11_mx85b")
 
-[node name="Util#2" type="ProgressBar" parent="CanvasLayer/UIController" unique_id=487610865]
+[node name="Util#2" type="ProgressBar" parent="CanvasLayer (UI stuff)/UIController" unique_id=487610865]
 offset_left = 137.0
 offset_top = 143.0
 offset_right = 302.0
@@ -664,6 +675,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_hx44q")
 value = 100.0
 fill_mode = 1
 
-[node name="Utility2Sprite2" type="Sprite2D" parent="CanvasLayer/UIController" unique_id=1881625861]
+[node name="Utility2Sprite2" type="Sprite2D" parent="CanvasLayer (UI stuff)/UIController" unique_id=1881625861]
 position = Vector2(90, 159)
 texture = ExtResource("11_mx85b")

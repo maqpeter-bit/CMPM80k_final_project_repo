@@ -1,7 +1,10 @@
 extends Node2D
 
 @export var enemy_queue: Array[PackedScene]
-@export var spawn_interval := 1.0
+@export var spawn_intervalMin := 1.0
+@export var spawn_intervalMax := 3.0
+
+@export var bagRefillTime := 5.0
 @export var pipes: Array[Node2D]
 @export var ladder_builder: Node2D
 
@@ -32,12 +35,14 @@ func start_wave():
 
 	while true:
 		if bag.is_empty():
+			await get_tree().create_timer(bagRefillTime).timeout
 			refill_bag()
 
 		var enemy_scene = bag.pop_back()
 		spawn_enemy(enemy_scene)
-
-		await get_tree().create_timer(spawn_interval).timeout
+		
+		var waitTimeBetweenEnemySpawn = randi_range(spawn_intervalMin, spawn_intervalMax)
+		await get_tree().create_timer(waitTimeBetweenEnemySpawn).timeout
 
 func spawn_enemy(enemy_scene: PackedScene):
 	var enemy = enemy_scene.instantiate()

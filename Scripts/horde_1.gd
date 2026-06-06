@@ -12,7 +12,7 @@ var wall_in_hitbox = null
 var isTouchingWall = false
 var damage_timer = 0.0
 var knockback = Vector2.ZERO
-var ladderDropChance = 10 # 10 in 100 chance or 1/10 chance. 10% basically.
+var ladderDropChance = 3 # 10 in 100 chance or 1/10 chance. 10% basically.
 
 
 func _ready():
