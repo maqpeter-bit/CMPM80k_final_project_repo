@@ -5,13 +5,14 @@ const SPEED = 90.0
 const JUMP_VELOCITY = -400.0
 var player: CharacterBody2D
 var jumpTimer:= 0.0
-var health = 3.0
+var health = 2.0
 var player_in_hitbox = null # Only used for extra stuff. Ignore this
 var isTouchingPlayer = false
 var wall_in_hitbox = null
 var isTouchingWall = false
 var damage_timer = 0.0
 var knockback = Vector2.ZERO
+var ladderDropChance = 10 # 10 in 100 chance or 1/10 chance. 10% basically.
 
 
 func _ready():
@@ -114,8 +115,9 @@ func getHurt():
 		call_deferred("_die")
 
 func _die():
-	var ladder = ladder_scene.instantiate()
-	get_parent().add_child(ladder)
-	ladder.global_position = global_position
+	if randi() % ladderDropChance == 0: # 1 in 10 chance? Since ladder is 10%
+		var ladder = ladder_scene.instantiate()
+		get_parent().add_child(ladder)
+		ladder.global_position = global_position
 
 	queue_free()

@@ -546,7 +546,7 @@ scale = Vector2(0.5, 0.5)
 [node name="LevelController" type="Node2D" parent="." unique_id=200563611 node_paths=PackedStringArray("pipes", "ladder_builder")]
 script = ExtResource("1_crycw")
 enemy_queue = Array[PackedScene]([ExtResource("5_v8kj3")])
-spawn_interval = 0.2
+spawn_interval = 0.3
 pipes = [NodePath("../Pipe1/PipeSpawnPoint")]
 ladder_builder = NodePath("../LadderBuilder")
 
