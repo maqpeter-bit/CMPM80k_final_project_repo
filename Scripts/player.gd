@@ -9,8 +9,6 @@ class_name Player
 @onready var hurtSound: AudioStreamPlayer2D = $HurtSound
 @export var sword_hitbox := Area2D
 @export var sword_collision := CollisionShape2D
-
-
 @onready var ArrowScene = preload("res://arrow.tscn")
 @onready var wallScene = preload("res://wall.tscn")
 
@@ -146,7 +144,11 @@ func _physics_process(delta: float) -> void:
 			utilitySwap1or2 = 2
 		elif utilitySwap1or2 == 2:
 			utilitySwap1or2 = 1
-		print(utilitySwap1or2)
+		var select_visual = get_tree().get_first_node_in_group("SelectItem")
+		print(select_visual)
+		if select_visual:
+			select_visual.play("playFlash")
+
 		
 		
 

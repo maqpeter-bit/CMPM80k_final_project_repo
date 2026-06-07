@@ -536,6 +536,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nauge"]
+atlas = ExtResource("14_eqrsh")
+region = Rect2(64, 64, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3l65w"]
 atlas = ExtResource("14_eqrsh")
 region = Rect2(0, 0, 32, 32)
@@ -552,25 +556,12 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("14_eqrsh")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nauge"]
-atlas = ExtResource("14_eqrsh")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ycv2e"]
-atlas = ExtResource("14_eqrsh")
-region = Rect2(64, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c5gc3"]
-atlas = ExtResource("14_eqrsh")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6e4cv"]
-atlas = ExtResource("14_eqrsh")
-region = Rect2(32, 64, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_52iny"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nauge")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3l65w")
 }, {
@@ -585,18 +576,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nauge")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ycv2e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c5gc3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6e4cv")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"playFlash",
 "speed": 5.0
 }]
 
@@ -708,13 +690,15 @@ selectItemVisual = NodePath("SelectItem")
 UtilityBowTexture = ExtResource("11_mx85b")
 UtilityHammerTexture = ExtResource("12_n8vhr")
 
-[node name="SelectItem" type="AnimatedSprite2D" parent="CanvasLayer (UI stuff)/UIController" unique_id=844667534]
+[node name="SelectItem" type="AnimatedSprite2D" parent="CanvasLayer (UI stuff)/UIController" unique_id=844667534 groups=["SelectItem", "hurt_visual"]]
 position = Vector2(180, 83.00001)
 scale = Vector2(7.8399982, 2.2799983)
 sprite_frames = SubResource("SpriteFrames_52iny")
-autoplay = "default"
-frame_progress = 0.8800217
-speed_scale = 2.0
+animation = &"playFlash"
+autoplay = "playFlash"
+frame = 5
+frame_progress = 1.0
+speed_scale = 3.0
 
 [node name="HealthBar" type="ProgressBar" parent="CanvasLayer (UI stuff)/UIController" unique_id=980315607]
 offset_right = 307.0
