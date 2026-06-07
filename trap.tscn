@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dfl1pglg8n2si"]
+
+[ext_resource type="Texture2D" uid="uid://kqpbc8esj144" path="res://ArtAssets/Extras/TrapPlaceholder.png" id="1_kd1db"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2pp3"]
+size = Vector2(64, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd1db"]
+size = Vector2(62, 16)
+
+[node name="Trap" type="RigidBody2D" unique_id=1224669839]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=972277272]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_w2pp3")
+debug_color = Color(0.9788502, 0, 0.39666367, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1858814715]
+position = Vector2(0, -30)
+texture = ExtResource("1_kd1db")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1417458167 groups=["trap"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=926966835]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_kd1db")

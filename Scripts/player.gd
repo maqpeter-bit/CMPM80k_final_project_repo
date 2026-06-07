@@ -35,6 +35,7 @@ var Utility1Options := ["bow", "hammer"]
 var Utility2Options := ["wall", "trap", "fan"]
 var item1Index = 0
 var item2Index = 0
+var utilitySwap1or2 = 1
 
 
 
@@ -114,21 +115,38 @@ func _physics_process(delta: float) -> void:
 			hammerAttack()
 
 	if Input.is_action_just_pressed("useUtility2") && Utility2Cooldown <= 0:
-		print("Utility 2 used")
 		if UTIL_SELECTED_ITEM_2 == "wall":
 			Utility2Cooldown = wallMaxCooldown
 			Utility2MAXCooldown = wallMaxCooldown
 			placeWall()
+		if UTIL_SELECTED_ITEM_2 == "trap":
+			print("placed trap")
 		
 	if Input.is_action_just_pressed("SwapUtility"):
-		item1Index += 1
-		if	item1Index == Utility1Options.size(): #If the item being selected is the last
-			item1Index = 0
-			UTIL_SELECTED_ITEM_1 = Utility1Options[item1Index]
+		if utilitySwap1or2 == 1:
+			item1Index += 1
+			if	item1Index == Utility1Options.size(): #If the item being selected is the last
+				item1Index = 0
+				UTIL_SELECTED_ITEM_1 = Utility1Options[item1Index]
+			else:
+				UTIL_SELECTED_ITEM_1 = Utility1Options[item1Index]
 		else:
-			UTIL_SELECTED_ITEM_1 = Utility1Options[item1Index]
+			item2Index += 1
+			if item2Index == Utility2Options.size():
+				item2Index = 0
+				UTIL_SELECTED_ITEM_2 = Utility2Options[item2Index]
+			else:
+				UTIL_SELECTED_ITEM_2 = Utility2Options[item2Index]
 
-		print(UTIL_SELECTED_ITEM_1)
+
+		
+			
+	if Input.is_action_just_pressed("SelectUtility"):
+		if utilitySwap1or2 == 1:
+			utilitySwap1or2 = 2
+		elif utilitySwap1or2 == 2:
+			utilitySwap1or2 = 1
+		print(utilitySwap1or2)
 		
 		
 

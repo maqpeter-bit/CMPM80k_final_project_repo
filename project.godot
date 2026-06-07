@@ -28,6 +28,7 @@ player=""
 sword=""
 wall=""
 destroyArrow(barrier)="For the arrow. If it hits this, it gets destroyed. "
+trap=""
 
 [input]
 

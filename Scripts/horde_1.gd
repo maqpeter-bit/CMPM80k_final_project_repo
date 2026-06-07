@@ -12,8 +12,7 @@ var wall_in_hitbox = null
 var isTouchingWall = false
 var damage_timer = 0.0
 var knockback = Vector2.ZERO
-var ladderDropChance = 3 # 10 in 100 chance or 1/10 chance. 10% basically.
-
+@export var ladderDropChance := 10.0
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -115,7 +114,7 @@ func getHurt():
 		call_deferred("_die")
 
 func _die():
-	if randi() % ladderDropChance == 0: # 1 in 10 chance? Since ladder is 10%
+	if randf() * 100.0 < ladderDropChance:
 		var ladder = ladder_scene.instantiate()
 		get_parent().add_child(ladder)
 		ladder.global_position = global_position

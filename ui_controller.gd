@@ -8,6 +8,8 @@ extends Node2D
 @export var Utility1Bar: ProgressBar
 @export var Utility2Bar: ProgressBar
 
+@export var selectItemVisual: AnimatedSprite2D
+
 @export var UtilityBowTexture: Texture
 @export var UtilityHammerTexture: Texture
 
@@ -28,6 +30,11 @@ func _process(delta: float) -> void:
 	
 	if player.UTIL_SELECTED_ITEM_1 == "bow":
 		Utility1Icon.texture = UtilityBowTexture
-	else:
+	elif player.UTIL_SELECTED_ITEM_1 == "hammer":
 		Utility1Icon.texture = UtilityHammerTexture
+		
+	if player.utilitySwap1or2 == 1:
+		selectItemVisual.position.y = 84.0
+	else:
+		selectItemVisual.position.y = 157.0
 	pass
