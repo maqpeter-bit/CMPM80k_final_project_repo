@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6vrnkab0ev5u"
-path="res://.godot/imported/New Piskel.png-58b5faaf81cce345faf8684acc775501.ctex"
+uid="uid://x6t0s6kywvnb"
+path="res://.godot/imported/RockTile.png-c9222d791d4b7ed79bf8cf1731287fba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/Extras/New Piskel.png"
-dest_files=["res://.godot/imported/New Piskel.png-58b5faaf81cce345faf8684acc775501.ctex"]
+source_file="res://ArtAssets/Tilemap/RockTile.png"
+dest_files=["res://.godot/imported/RockTile.png-c9222d791d4b7ed79bf8cf1731287fba.ctex"]
 
 [params]
 
