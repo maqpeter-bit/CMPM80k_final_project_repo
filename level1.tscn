@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d208vybtkr5fj" path="res://Scripts/level_controller.gd" id="1_crycw"]
 [ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://Scripts/ladder_builder.gd" id="1_i2041"]
 [ext_resource type="Texture2D" uid="uid://cvsahamjkdpix" path="res://ArtAssets/Tilemap/GroundPlaceholder.png" id="1_jwv3a"]
+[ext_resource type="Texture2D" uid="uid://c6vrnkab0ev5u" path="res://ArtAssets/Extras/New Piskel.png" id="1_rjtee"]
 [ext_resource type="PackedScene" uid="uid://cqq66e0q4nwub" path="res://Player.tscn" id="2_dopym"]
 [ext_resource type="Script" uid="uid://kkuyq8q3qxrv" path="res://Scripts/enemy_spawn_data.gd" id="2_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="3_ootpb"]
@@ -15,6 +16,56 @@
 [ext_resource type="Texture2D" uid="uid://d3sjr74pir63g" path="res://ArtAssets/Extras/templatePlaceholder.png" id="11_mx85b"]
 [ext_resource type="Texture2D" uid="uid://bff36o32drus0" path="res://ArtAssets/Extras/templatePlaceholder2.png" id="12_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://rf0ht1qhnwm4" path="res://ArtAssets/Extras/SelectedUtility.png" id="14_eqrsh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycv2e"]
+atlas = ExtResource("1_rjtee")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5gc3"]
+atlas = ExtResource("1_rjtee")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e4cv"]
+atlas = ExtResource("1_rjtee")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuy0h"]
+atlas = ExtResource("1_rjtee")
+region = Rect2(256, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52iny"]
+atlas = ExtResource("1_rjtee")
+region = Rect2(0, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxqqj"]
+atlas = ExtResource("1_rjtee")
+region = Rect2(256, 512, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7nyxr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycv2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5gc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e4cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuy0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52iny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxqqj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [sub_resource type="Resource" id="Resource_eqrsh"]
 script = ExtResource("2_n8vhr")
@@ -603,6 +654,13 @@ bg_color = Color(0.13527921, 0.068288736, 0.07668204, 1)
 
 [node name="LevelRoot" type="Node2D" unique_id=890056521]
 scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=998840661]
+position = Vector2(218.16669, 120.00002)
+scale = Vector2(1.7018231, 0.9348959)
+sprite_frames = SubResource("SpriteFrames_7nyxr")
+autoplay = "default"
+frame_progress = 0.14958209
 
 [node name="Arrows" type="Node2D" parent="." unique_id=1138727819]
 scale = Vector2(0.5, 0.5)
