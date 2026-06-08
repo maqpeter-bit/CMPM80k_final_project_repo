@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cvnw8mg4phmta"]
+
+[ext_resource type="Texture2D" uid="uid://cphqpdoyuov6t" path="res://ArtAssets/Extras/FanPlaceholder.png" id="1_1vo3d"]
+[ext_resource type="Script" uid="uid://c0mnc5irf6qrr" path="res://Scripts/fan.gd" id="1_wv1b0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vgsl"]
+size = Vector2(64, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7l2ec"]
+size = Vector2(107, 58)
+
+[node name="Node2D" type="Node2D" unique_id=295888628]
+script = ExtResource("1_wv1b0")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=447362986]
+collision_layer = 0
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1475863930]
+texture = ExtResource("1_1vo3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=2000361025]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_8vgsl")
+debug_color = Color(0.95859534, 6.738305e-07, 0.5289286, 0.41960785)
+
+[node name="FanCollision" type="Area2D" parent="RigidBody2D" unique_id=1646957638 groups=["fan"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/FanCollision" unique_id=1797062528]
+position = Vector2(79.5, 3)
+shape = SubResource("RectangleShape2D_7l2ec")

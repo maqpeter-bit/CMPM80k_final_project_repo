@@ -40,12 +40,19 @@ func _on_hurtbox_area_entered(area):
 		getHurt()
 		var arrow = area.get_parent()
 		arrow.destroy()
+	if area.is_in_group("trap"):
+		getHurt()
 	
 	if area.is_in_group("wall"):
 		isTouchingWall = true
 		wall_in_hitbox = area
-		print("I damaged teh wall")
-	
+		
+	if area.is_in_group("fan"):
+		var knockback_strength = 1500.0
+		var direction = global_position.direction_to(area.global_position)
+		direction.y = 0
+		var explosion_force = direction * knockback_strength
+		knockback = explosion_force * -1
 		
 
 func _on_hurtbox_area_exited(area):

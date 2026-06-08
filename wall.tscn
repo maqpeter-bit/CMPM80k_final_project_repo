@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qooyahycnkup"]
 
 [ext_resource type="Texture2D" uid="uid://cvsahamjkdpix" path="res://ArtAssets/Tilemap/GroundPlaceholder.png" id="1_xxgf6"]
-[ext_resource type="Script" uid="uid://byottn4kd1r5t" path="res://wallScript.gd" id="1_y4f30"]
+[ext_resource type="Script" uid="uid://byottn4kd1r5t" path="res://Scripts/wallScript.gd" id="1_y4f30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4f30"]
 size = Vector2(254, 888)

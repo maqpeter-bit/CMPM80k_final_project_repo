@@ -89,7 +89,7 @@ size = Vector2(44.21275, 353.98175)
 [node name="Player" type="CharacterBody2D" unique_id=1082196993 node_paths=PackedStringArray("hammer_sprite_2d", "hammerHitbox", "sword_hitbox", "sword_collision", "arrow_container") groups=["player"]]
 scale = Vector2(0.25, 0.25)
 collision_layer = 5
-collision_mask = 5
+collision_mask = 4
 script = ExtResource("1_kpjcp")
 hammer_sprite_2d = NodePath("HammerHitBox/HammerVisual")
 hammerHitbox = NodePath("HammerHitBox")

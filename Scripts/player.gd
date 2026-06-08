@@ -11,6 +11,10 @@ class_name Player
 @export var sword_collision := CollisionShape2D
 @onready var ArrowScene = preload("res://arrow.tscn")
 @onready var wallScene = preload("res://wall.tscn")
+@onready var trapScene = preload("res://trap.tscn")
+@onready var fanScene_Right = preload("res://fan_right.tscn")
+@onready var fanScene_Left = preload("res://fan_left.tscn")
+
 
 @export var next_level: String
 @export var arrow_container: Node
@@ -118,7 +122,14 @@ func _physics_process(delta: float) -> void:
 			Utility2MAXCooldown = wallMaxCooldown
 			placeWall()
 		if UTIL_SELECTED_ITEM_2 == "trap":
-			print("placed trap")
+			# Currently trap cooldowns use wall cooldowns. 10 seconds.
+			Utility2Cooldown = wallMaxCooldown
+			Utility2MAXCooldown = wallMaxCooldown
+			placeTrap()
+		if UTIL_SELECTED_ITEM_2 == "fan":
+			Utility2Cooldown = wallMaxCooldown
+			Utility2MAXCooldown = wallMaxCooldown
+			placeFan()
 		
 	if Input.is_action_just_pressed("SwapUtility"):
 		if utilitySwap1or2 == 1:
@@ -145,8 +156,8 @@ func _physics_process(delta: float) -> void:
 		elif utilitySwap1or2 == 2:
 			utilitySwap1or2 = 1
 		var select_visual = get_tree().get_first_node_in_group("SelectItem")
-		print(select_visual)
 		if select_visual:
+			select_visual.stop()
 			select_visual.play("playFlash")
 
 		
@@ -201,7 +212,6 @@ func hammerAttack():
 	sword_collision.disabled = true
 
 func placeWall():
-	print("placed wall")
 	var direction = (get_global_mouse_position() - global_position).normalized()
 	var wall = wallScene.instantiate()
 	arrow_container.add_child(wall)
@@ -213,8 +223,37 @@ func placeWall():
 	else:
 		wall.global_position = Vector2(global_position.x + (offset * -1), 800)
 
-	
+func placeTrap():
+	var direction = (get_global_mouse_position() - global_position).normalized()
+	var wall = trapScene.instantiate()
+	arrow_container.add_child(wall)
+	direction.y = 0
+	var offset = 80
+	#wall.global_position.y = -100
+	if direction.x > 0:
+		wall.global_position = Vector2(global_position.x + offset, global_position.y)
+	else:
+		wall.global_position = Vector2(global_position.x + (offset * -1), global_position.y)
 
+func placeFan():
+	var direction = (get_global_mouse_position() - global_position).normalized()
+	var wall = null
+	if direction.x > 0:
+		wall = fanScene_Right.instantiate()
+
+	else:
+		wall = fanScene_Left.instantiate()
+
+		
+	arrow_container.add_child(wall)
+	direction.y = 0
+	var offset = 80
+	
+	if direction.x > 0:
+		wall.global_position = Vector2(global_position.x + offset, global_position.y)
+	else:
+		wall.global_position = Vector2(global_position.x + (offset * -1), global_position.y)
+	#wall.global_position.y = -100
 
 
 

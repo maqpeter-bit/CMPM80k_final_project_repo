@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://Scripts/ladder_builder.gd" id="1_i2041"]
 [ext_resource type="Texture2D" uid="uid://cvsahamjkdpix" path="res://ArtAssets/Tilemap/GroundPlaceholder.png" id="1_jwv3a"]
 [ext_resource type="PackedScene" uid="uid://cqq66e0q4nwub" path="res://Player.tscn" id="2_dopym"]
-[ext_resource type="Script" uid="uid://kkuyq8q3qxrv" path="res://enemy_spawn_data.gd" id="2_n8vhr"]
+[ext_resource type="Script" uid="uid://kkuyq8q3qxrv" path="res://Scripts/enemy_spawn_data.gd" id="2_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="3_ootpb"]
 [ext_resource type="Texture2D" uid="uid://s5b577tye2of" path="res://ArtAssets/Extras/Pipe.png" id="4_v38iq"]
 [ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="4_xy4tn"]
 [ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://Horde1.tscn" id="5_v8kj3"]
 [ext_resource type="Texture2D" uid="uid://c2sd8vym4yc10" path="res://ArtAssets/Extras/HurtVisual.png" id="9_usj0q"]
-[ext_resource type="Script" uid="uid://dm76g4rf0f7tm" path="res://ui_controller.gd" id="10_eqrsh"]
+[ext_resource type="Script" uid="uid://dm76g4rf0f7tm" path="res://Scripts/ui_controller.gd" id="10_eqrsh"]
 [ext_resource type="Texture2D" uid="uid://d3sjr74pir63g" path="res://ArtAssets/Extras/templatePlaceholder.png" id="11_mx85b"]
 [ext_resource type="Texture2D" uid="uid://bff36o32drus0" path="res://ArtAssets/Extras/templatePlaceholder2.png" id="12_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://rf0ht1qhnwm4" path="res://ArtAssets/Extras/SelectedUtility.png" id="14_eqrsh"]
@@ -476,8 +476,8 @@ texture = ExtResource("1_jwv3a")
 15:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_4d4qa"]
-physics_layer_0/collision_layer = 7
-physics_layer_0/collision_mask = 7
+physics_layer_0/collision_layer = 63
+physics_layer_0/collision_mask = 63
 sources/0 = SubResource("TileSetAtlasSource_xy4tn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v38iq"]
