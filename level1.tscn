@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cqq66e0q4nwub" path="res://Player.tscn" id="2_dopym"]
 [ext_resource type="Script" uid="uid://kkuyq8q3qxrv" path="res://Scripts/enemy_spawn_data.gd" id="2_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="3_ootpb"]
+[ext_resource type="PackedScene" uid="uid://c4tstmgxo8n7w" path="res://Horde2.tscn" id="4_3l65w"]
 [ext_resource type="Texture2D" uid="uid://s5b577tye2of" path="res://ArtAssets/Extras/Pipe.png" id="4_v38iq"]
 [ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="4_xy4tn"]
 [ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://Horde1.tscn" id="5_v8kj3"]
@@ -18,6 +19,12 @@
 [sub_resource type="Resource" id="Resource_eqrsh"]
 script = ExtResource("2_n8vhr")
 enemy_scene = ExtResource("5_v8kj3")
+ladder_drop_chance = 100
+metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
+
+[sub_resource type="Resource" id="Resource_rjtee"]
+script = ExtResource("2_n8vhr")
+enemy_scene = ExtResource("4_3l65w")
 ladder_drop_chance = 100
 metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
 
@@ -602,7 +609,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="LevelController" type="Node2D" parent="." unique_id=200563611 node_paths=PackedStringArray("pipes", "ladder_builder")]
 script = ExtResource("1_crycw")
-enemy_queue = Array[ExtResource("2_n8vhr")]([SubResource("Resource_eqrsh")])
+enemy_queue = Array[ExtResource("2_n8vhr")]([SubResource("Resource_eqrsh"), SubResource("Resource_rjtee")])
 spawn_intervalMin = 0.3
 spawn_intervalMax = 0.6
 bagRefillTime = 10.0
