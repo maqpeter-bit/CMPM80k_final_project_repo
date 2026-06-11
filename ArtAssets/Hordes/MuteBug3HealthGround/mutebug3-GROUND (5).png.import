@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hmt201mqg2l7"
-path="res://.godot/imported/LadderHorde.png-571ee5050f1702c6acdb600f124a5b78.ctex"
+uid="uid://baamjoml6oy75"
+path="res://.godot/imported/mutebug3-GROUND (5).png-8115d9847e1ef7692b1418cf9a08dfd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/Hordes/Horde1 (ladder)/LadderHorde.png"
-dest_files=["res://.godot/imported/LadderHorde.png-571ee5050f1702c6acdb600f124a5b78.ctex"]
+source_file="res://ArtAssets/Hordes/MuteBug3HealthGround/mutebug3-GROUND (5).png"
+dest_files=["res://.godot/imported/mutebug3-GROUND (5).png-8115d9847e1ef7692b1418cf9a08dfd7.ctex"]
 
 [params]
 

@@ -1,32 +1,33 @@
-[gd_scene format=3 uid="uid://c4tstmgxo8n7w"]
+[gd_scene format=3 uid="uid://dfe6fr5gasob0"]
 
-[ext_resource type="Script" uid="uid://b18ftbml4w6nl" path="res://Scripts/horde_flying.gd" id="1_6uxba"]
-[ext_resource type="PackedScene" uid="uid://gc0dvvyagm6d" path="res://ladder_pickup.tscn" id="2_ejudx"]
-[ext_resource type="Texture2D" uid="uid://hmt201mqg2l7" path="res://ArtAssets/Hordes/Horde1 (ladder)/LadderHorde.png" id="3_nfkf6"]
-[ext_resource type="Script" uid="uid://ctrqbobugl1rx" path="res://enemy_health_bar.gd" id="4_ejudx"]
+[ext_resource type="Script" uid="uid://ovwbl0iwprn8" path="res://Scripts/horde_ground.gd" id="1_85bxh"]
+[ext_resource type="Texture2D" uid="uid://hmt201mqg2l7" path="res://ArtAssets/Hordes/Placeholder horde/LadderHorde.png" id="1_nlqxx"]
+[ext_resource type="PackedScene" uid="uid://gc0dvvyagm6d" path="res://ladder_pickup.tscn" id="2_dqm35"]
+[ext_resource type="Script" uid="uid://ctrqbobugl1rx" path="res://Scripts/enemy_health_bar.gd" id="4_oeg8p"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_85bxh"]
-atlas = ExtResource("3_nfkf6")
+atlas = ExtResource("1_nlqxx")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqm35"]
-atlas = ExtResource("3_nfkf6")
+atlas = ExtResource("1_nlqxx")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oeg8p"]
-atlas = ExtResource("3_nfkf6")
+atlas = ExtResource("1_nlqxx")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymbcf"]
-atlas = ExtResource("3_nfkf6")
+atlas = ExtResource("1_nlqxx")
 region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5i4e"]
-atlas = ExtResource("3_nfkf6")
+atlas = ExtResource("1_nlqxx")
 region = Rect2(0, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1f22"]
-atlas = ExtResource("3_nfkf6")
+atlas = ExtResource("1_nlqxx")
 region = Rect2(64, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3o8ru"]
@@ -61,10 +62,10 @@ size = Vector2(64, 51)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqm35"]
 size = Vector2(62.857147, 51.428574)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfkf6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqm35"]
 bg_color = Color(0.92057854, 0.097221605, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l07px"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oeg8p"]
 bg_color = Color(3.3691526e-07, 0.7277015, 0.11157543, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1335456853 groups=["enemies"]]
@@ -72,14 +73,14 @@ z_index = 1
 scale = Vector2(0.35, 0.35)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_6uxba")
-ladder_scene = ExtResource("2_ejudx")
+script = ExtResource("1_85bxh")
+ladder_scene = ExtResource("2_dqm35")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1563062416 groups=["enemies"]]
 sprite_frames = SubResource("SpriteFrames_3o8ru")
 autoplay = "default"
-frame_progress = 0.7871001
-speed_scale = 20.0
+frame_progress = 0.09291839
+speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=58610119 groups=["enemies"]]
 position = Vector2(0, 6.5)
@@ -92,7 +93,7 @@ position = Vector2(-3.4059785e-06, 5.71428)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_dqm35")
 
-[node name="HealthBar" type="ProgressBar" parent="." unique_id=1821193875 node_paths=PackedStringArray("enemy", "healthBar")]
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=180392601 node_paths=PackedStringArray("enemy", "healthBar")]
 offset_left = -45.71428
 offset_top = -37.142853
 offset_right = 261.2857
@@ -101,9 +102,9 @@ scale = Vector2(0.32690838, 0.3656251)
 tooltip_text = "HEALTH:"
 theme_override_colors/font_color = Color(0.9490196, 1, 0.94509804, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/background = SubResource("StyleBoxFlat_nfkf6")
-theme_override_styles/fill = SubResource("StyleBoxFlat_l07px")
+theme_override_styles/background = SubResource("StyleBoxFlat_dqm35")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oeg8p")
 value = 100.0
-script = ExtResource("4_ejudx")
+script = ExtResource("4_oeg8p")
 enemy = NodePath("..")
 healthBar = NodePath(".")

@@ -7,6 +7,9 @@ class_name Player
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 @onready var arrowShoot_sound: AudioStreamPlayer2D = $ArrowShootSound
 @onready var hurtSound: AudioStreamPlayer2D = $HurtSound
+@onready var hammerSwingSound: AudioStreamPlayer2D = $HammerSwingSound
+@onready var buildItemSound: AudioStreamPlayer2D = $BuildItemSound
+
 @export var sword_hitbox := Area2D
 @export var sword_collision := CollisionShape2D
 @onready var ArrowScene = preload("res://arrow.tscn")
@@ -113,10 +116,13 @@ func _physics_process(delta: float) -> void:
 		if UTIL_SELECTED_ITEM_1 == "hammer":
 			Utility1Cooldown = hammerMaxCooldown
 			Utility1MAXCooldown = hammerMaxCooldown
+			hammerSwingSound.play()
+
 
 			hammerAttack()
 
 	if Input.is_action_just_pressed("useUtility2") && Utility2Cooldown <= 0:
+		buildItemSound.play()
 		if UTIL_SELECTED_ITEM_2 == "wall":
 			Utility2Cooldown = wallMaxCooldown
 			Utility2MAXCooldown = wallMaxCooldown

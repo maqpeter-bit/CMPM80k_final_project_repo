@@ -5,7 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://dsch3fkirg57p" path="res://Sounds/bowShoot.wav" id="3_e80uo"]
 [ext_resource type="AudioStream" uid="uid://d0iirh8qqsjt7" path="res://Sounds/playerJump.wav" id="3_kne1u"]
 [ext_resource type="AudioStream" uid="uid://nb2fsyft5742" path="res://Sounds/playerHurt.wav" id="4_cxr5p"]
+[ext_resource type="AudioStream" uid="uid://d35leu8td7oy0" path="res://Sounds/HammerSwing.wav" id="5_wi0c6"]
 [ext_resource type="Texture2D" uid="uid://dsk7eyui5vxhl" path="res://ArtAssets/Player/playerCooldownVisual.png" id="6_dtqjt"]
+[ext_resource type="AudioStream" uid="uid://btpfsnlot3rj2" path="res://Sounds/BuildItem.wav" id="6_hp6x6"]
 [ext_resource type="Script" uid="uid://cn1tdmacmgjiu" path="res://Scripts/item_cooldown.gd" id="7_dtqjt"]
 [ext_resource type="Texture2D" uid="uid://f6tj6pu3nqi3" path="res://ArtAssets/Extras/SwordSwing.png" id="8_5ncpa"]
 
@@ -113,6 +115,12 @@ stream = ExtResource("3_e80uo")
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=572612733]
 stream = ExtResource("4_cxr5p")
+
+[node name="HammerSwingSound" type="AudioStreamPlayer2D" parent="." unique_id=1624206943]
+stream = ExtResource("5_wi0c6")
+
+[node name="BuildItemSound" type="AudioStreamPlayer2D" parent="." unique_id=732131406]
+stream = ExtResource("6_hp6x6")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1596035327]
 stream = ExtResource("3_kne1u")

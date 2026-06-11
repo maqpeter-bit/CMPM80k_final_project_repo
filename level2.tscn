@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://daykgbmlm67cw"]
 
 [ext_resource type="Script" uid="uid://d208vybtkr5fj" path="res://Scripts/level_controller.gd" id="1_rmy57"]
-[ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://Horde1.tscn" id="2_qulpo"]
+[ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://OneShotGround.tscn" id="2_qulpo"]
 [ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://Scripts/ladder_builder.gd" id="3_jifot"]
 [ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="4_3opl0"]
 [ext_resource type="Texture2D" uid="uid://cvsahamjkdpix" path="res://ArtAssets/Tilemap/GroundPlaceholder.png" id="5_dc5vx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="7_mw4xc"]
 [ext_resource type="Texture2D" uid="uid://s5b577tye2of" path="res://ArtAssets/Extras/Pipe.png" id="8_r8rrl"]
 [ext_resource type="Texture2D" uid="uid://c2sd8vym4yc10" path="res://ArtAssets/Extras/HurtVisual.png" id="9_qulpo"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmy57"]
 size = Vector2(20, 150.08333)

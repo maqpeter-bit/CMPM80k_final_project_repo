@@ -7,16 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://cqq66e0q4nwub" path="res://Player.tscn" id="2_dopym"]
 [ext_resource type="Script" uid="uid://kkuyq8q3qxrv" path="res://Scripts/enemy_spawn_data.gd" id="2_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="3_ootpb"]
-[ext_resource type="PackedScene" uid="uid://c4tstmgxo8n7w" path="res://Horde2.tscn" id="4_3l65w"]
+[ext_resource type="PackedScene" uid="uid://c4tstmgxo8n7w" path="res://OneShotFlying.tscn" id="4_3l65w"]
 [ext_resource type="Texture2D" uid="uid://s5b577tye2of" path="res://ArtAssets/Extras/Pipe.png" id="4_v38iq"]
 [ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="4_xy4tn"]
-[ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://Horde1.tscn" id="5_v8kj3"]
+[ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://OneShotGround.tscn" id="5_v8kj3"]
 [ext_resource type="Texture2D" uid="uid://x6t0s6kywvnb" path="res://ArtAssets/Tilemap/RockTile.png" id="9_1idop"]
 [ext_resource type="Texture2D" uid="uid://c2sd8vym4yc10" path="res://ArtAssets/Extras/HurtVisual.png" id="9_usj0q"]
 [ext_resource type="Script" uid="uid://dm76g4rf0f7tm" path="res://Scripts/ui_controller.gd" id="10_eqrsh"]
 [ext_resource type="Texture2D" uid="uid://d3sjr74pir63g" path="res://ArtAssets/Extras/templatePlaceholder.png" id="11_mx85b"]
 [ext_resource type="Texture2D" uid="uid://bff36o32drus0" path="res://ArtAssets/Extras/templatePlaceholder2.png" id="12_n8vhr"]
-[ext_resource type="Texture2D" uid="uid://rf0ht1qhnwm4" path="res://ArtAssets/Extras/SelectedUtility.png" id="14_eqrsh"]
+[ext_resource type="Texture2D" uid="uid://7d6djq1afmqx" path="res://ArtAssets/Extras/SelectAnimation.png" id="17_1idop"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ycv2e"]
 atlas = ExtResource("1_rjtee")
@@ -633,46 +633,53 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nauge"]
-atlas = ExtResource("14_eqrsh")
-region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3l65w"]
-atlas = ExtResource("14_eqrsh")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rjtee"]
-atlas = ExtResource("14_eqrsh")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1idop"]
-atlas = ExtResource("14_eqrsh")
-region = Rect2(64, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_beq0j"]
-atlas = ExtResource("14_eqrsh")
-region = Rect2(0, 32, 32, 32)
+atlas = ExtResource("17_1idop")
+region = Rect2(128, 128, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nauge"]
+atlas = ExtResource("17_1idop")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nyxr"]
+atlas = ExtResource("17_1idop")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43lh3"]
+atlas = ExtResource("17_1idop")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5le63"]
+atlas = ExtResource("17_1idop")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pieet"]
+atlas = ExtResource("17_1idop")
+region = Rect2(0, 128, 128, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_52iny"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nauge")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3l65w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rjtee")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1idop")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_beq0j")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nauge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nyxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43lh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5le63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pieet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beq0j")
 }],
 "loop": false,
 "name": &"playFlash",
@@ -796,12 +803,11 @@ UtilityBowTexture = ExtResource("11_mx85b")
 UtilityHammerTexture = ExtResource("12_n8vhr")
 
 [node name="SelectItem" type="AnimatedSprite2D" parent="CanvasLayer (UI stuff)/UIController" unique_id=844667534 groups=["SelectItem", "hurt_visual"]]
-position = Vector2(180, 83.00001)
-scale = Vector2(7.8399982, 2.2799983)
+position = Vector2(130, 84)
+scale = Vector2(3.0381243, 1.125)
 sprite_frames = SubResource("SpriteFrames_52iny")
 animation = &"playFlash"
 autoplay = "playFlash"
-frame = 5
 frame_progress = 1.0
 speed_scale = 3.0
 

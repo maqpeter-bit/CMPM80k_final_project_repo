@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cphqpdoyuov6t" path="res://ArtAssets/Extras/FanPlaceholder.png" id="1_1vo3d"]
 [ext_resource type="Script" uid="uid://c0mnc5irf6qrr" path="res://Scripts/fan.gd" id="1_wv1b0"]
+[ext_resource type="AudioStream" uid="uid://cv4hlgarnsyn1" path="res://Sounds/FanBlowing.wav" id="3_85ayj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vgsl"]
 size = Vector2(64, 14)
@@ -29,3 +30,8 @@ debug_color = Color(0.95859534, 6.738305e-07, 0.5289286, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/FanCollision" unique_id=1797062528]
 position = Vector2(79.5, 3)
 shape = SubResource("RectangleShape2D_7l2ec")
+
+[node name="BlowingSound" type="AudioStreamPlayer2D" parent="." unique_id=1275003570]
+stream = ExtResource("3_85ayj")
+autoplay = true
+max_distance = 494.0
