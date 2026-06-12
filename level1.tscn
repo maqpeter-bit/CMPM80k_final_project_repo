@@ -584,7 +584,7 @@ sources/2 = SubResource("TileSetAtlasSource_xy4tn")
 sources/1 = SubResource("TileSetAtlasSource_beq0j")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v38iq"]
-size = Vector2(84.890495, 36.94084)
+size = Vector2(94.41603, 270.76044)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx44q"]
 size = Vector2(21.166666, 32.166668)
@@ -774,7 +774,7 @@ collision_mask = 3
 freeze = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Pipe1/RigidBody2D" unique_id=1743790260]
-position = Vector2(-5.0996647, 7.9999847)
+position = Vector2(-6.083336, 11.707146)
 rotation = -3.1415925
 scale = Vector2(0.20653269, 0.03170961)
 shape = SubResource("RectangleShape2D_v38iq")
