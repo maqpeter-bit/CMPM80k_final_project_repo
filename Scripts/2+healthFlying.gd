@@ -14,7 +14,7 @@ const SPEED = 90.0
 @export var hover_move_speed := 100.0
 
 var player: CharacterBody2D
-var health = 2.0
+var health = 5.0
 var maxHealth = 5.0
 var player_in_hitbox = null
 var isTouchingPlayer = false
@@ -30,7 +30,7 @@ var current_hover_y = 0.0
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 
-	hover_y = global_position.y + randi_range(350, 500)
+	hover_y = global_position.y + randi_range(200, 350)
 	current_hover_y = hover_y
 	fly_time = randf_range(0.0, TAU)
 
@@ -41,16 +41,13 @@ func _ready():
 	match random_int:
 		1: 
 			animator.play("BLUE")
-			maxHealth = 2.0
-			health = 2.0
+
 		2:
 			animator.play("PURPLE")
-			maxHealth = 3.0
-			health = 3.0
+
 		3:
 			animator.play("YELLOW")
-			maxHealth = 4.0
-			health = 4.0
+
 
 
 func _on_hurtbox_area_entered(area):

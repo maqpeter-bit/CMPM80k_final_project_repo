@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://ctrqbobugl1rx" path="res://Scripts/enemy_health_bar.gd" id="4_yr33b"]
 [ext_resource type="Texture2D" uid="uid://baamjoml6oy75" path="res://ArtAssets/Hordes/MuteBug3HealthGround/mutebug3-GROUND (5).png" id="5_wbq78"]
 [ext_resource type="Texture2D" uid="uid://dj4g5rgt85v3b" path="res://ArtAssets/Hordes/MuteBug3HealthGround/mutebug3-GROUND (4).png" id="7_ppkjt"]
+[ext_resource type="AudioStream" uid="uid://b1cu8k7y7t8if" path="res://Sounds/arrowRicochet.wav" id="9_06tyn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aopng"]
 atlas = ExtResource("3_3cp2b")
@@ -231,3 +232,6 @@ value = 100.0
 script = ExtResource("4_yr33b")
 enemy = NodePath("..")
 healthBar = NodePath(".")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1701379233]
+stream = ExtResource("9_06tyn")

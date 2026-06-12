@@ -852,7 +852,7 @@ texture = ExtResource("12_a6yfa")
 position = Vector2(216.33334, 208.00005)
 collision_layer = 1
 collision_mask = 1
-next_level = "res://Tutorial4.tscn"
+next_level = "res://Tutorial5.tscn"
 arrow_container = NodePath("../Arrows")
 
 [node name="HurtVisual" type="AnimatedSprite2D" parent="." unique_id=1672376153 groups=["hurt_visual"]]

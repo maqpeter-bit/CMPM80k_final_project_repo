@@ -32,6 +32,7 @@ func refill_bag():
 	bag.shuffle()
 
 func start_wave():
+	await get_tree().create_timer(3.0).timeout 
 	refill_bag()
 
 	while true:

@@ -1,24 +1,23 @@
-[gd_scene format=3 uid="uid://c2ir6qdi63syt"]
+[gd_scene format=3 uid="uid://cybh3nbwt3hux"]
 
-[ext_resource type="Script" uid="uid://dlgpku1osycyx" path="res://TitleButton.gd" id="1_b513m"]
-[ext_resource type="Texture2D" uid="uid://c6vrnkab0ev5u" path="res://ArtAssets/Extras/Background.png" id="2_v81u5"]
-[ext_resource type="Texture2D" uid="uid://5qo2bvmbfsx8" path="res://ArtAssets/Extras/Tutorial6.png" id="3_b513m"]
-[ext_resource type="Texture2D" uid="uid://cg404gakvug3v" path="res://ArtAssets/Extras/Torch.png" id="4_8cr4k"]
+[ext_resource type="Texture2D" uid="uid://c6vrnkab0ev5u" path="res://ArtAssets/Extras/Background.png" id="1_513au"]
+[ext_resource type="Script" uid="uid://dlgpku1osycyx" path="res://TitleButton.gd" id="1_erq5j"]
+[ext_resource type="Texture2D" uid="uid://cg404gakvug3v" path="res://ArtAssets/Extras/Torch.png" id="2_ehjfg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_quvj1"]
-atlas = ExtResource("4_8cr4k")
+atlas = ExtResource("2_ehjfg")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4n62"]
-atlas = ExtResource("4_8cr4k")
+atlas = ExtResource("2_ehjfg")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rg4ux"]
-atlas = ExtResource("4_8cr4k")
+atlas = ExtResource("2_ehjfg")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yytgh"]
-atlas = ExtResource("4_8cr4k")
+atlas = ExtResource("2_ehjfg")
 region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kpm8p"]
@@ -41,32 +40,33 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Tutorial5" type="Node2D" unique_id=890056521]
+[node name="FINISH" type="Node2D" unique_id=890056521]
 scale = Vector2(3, 3)
 
 [node name="CanvasLayer (UI stuff)" type="CanvasLayer" parent="." unique_id=1055725370]
 
+[node name="Label" type="Label" parent="CanvasLayer (UI stuff)" unique_id=252622254]
+offset_left = 336.00003
+offset_top = 51.0
+offset_right = 490.0
+offset_bottom = 74.0
+scale = Vector2(5, 5)
+pivot_offset = Vector2(70, 0)
+text = "VICTORY!!"
+
 [node name="Button" type="Button" parent="CanvasLayer (UI stuff)" unique_id=866631755]
-offset_left = 767.0
-offset_top = 617.0
-offset_right = 864.0
-offset_bottom = 648.0
+offset_top = 199.0
+offset_right = 188.0
+offset_bottom = 230.0
 scale = Vector2(3, 3)
-text = "I'm ready!"
-script = ExtResource("1_b513m")
+text = "Return to main screen?"
+script = ExtResource("1_erq5j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=461841345]
-modulate = Color(0.69813776, 0.51835495, 0.18007478, 1)
+modulate = Color(0.7843835, 0.9142518, 0.98407406, 1)
 position = Vector2(799, 196.33333)
 scale = Vector2(5.746666, 2.0000002)
-texture = ExtResource("2_v81u5")
-flip_h = true
-flip_v = true
-
-[node name="Tutorial" type="Sprite2D" parent="." unique_id=1463842647]
-position = Vector2(160.33333, 153.00002)
-scale = Vector2(-0.3, -0.3)
-texture = ExtResource("3_b513m")
+texture = ExtResource("1_513au")
 flip_h = true
 flip_v = true
 
@@ -77,5 +77,5 @@ position = Vector2(376, 232.66667)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_kpm8p")
 autoplay = "default"
-frame_progress = 0.5196964
+frame_progress = 0.37055153
 speed_scale = 2.0

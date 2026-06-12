@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lrbp3cu15ejp"]
 
-[ext_resource type="Script" uid="uid://b18ftbml4w6nl" path="res://Scripts/1healthFlying.gd" id="1_c8tef"]
+[ext_resource type="Script" uid="uid://cmpug3rnrnlow" path="res://Scripts/2+healthFlying.gd" id="1_kqicd"]
 [ext_resource type="PackedScene" uid="uid://gc0dvvyagm6d" path="res://ladder_pickup.tscn" id="2_vbugf"]
 [ext_resource type="Texture2D" uid="uid://dp4ts1l8ej3xg" path="res://ArtAssets/Hordes/FlyingBug2+Health/mutefly2final2.png" id="3_kqicd"]
 [ext_resource type="Texture2D" uid="uid://cqmc1llbwfvbl" path="res://ArtAssets/Hordes/FlyingBug2+Health/mutefly2final3.png" id="4_yi4j2"]
@@ -168,9 +168,12 @@ z_index = 1
 scale = Vector2(0.35, 0.35)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_c8tef")
+script = ExtResource("1_kqicd")
 animator = NodePath("AnimatedSprite2D")
 ladder_scene = ExtResource("2_vbugf")
+fly_amplitude = 15.0
+fly_speed = 3.35
+hover_move_speed = 120.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1563062416 groups=["enemies"]]
 sprite_frames = SubResource("SpriteFrames_3o8ru")

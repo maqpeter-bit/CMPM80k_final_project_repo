@@ -11,6 +11,7 @@ class_name Player
 @onready var buildItemSound: AudioStreamPlayer2D = $BuildItemSound
 @onready var switchUtilitySound: AudioStreamPlayer2D = $switchUtility
 @onready var tabItemSound: AudioStreamPlayer2D = $TabItem
+@onready var deathSound: AudioStreamPlayer2D = $DEATH
 
 @export var sword_hitbox := Area2D
 @export var sword_collision := CollisionShape2D
@@ -37,6 +38,7 @@ var Utility1MAXCooldown := 0.0
 var Utility2MAXCooldown := 0.0
 var UTIL_SELECTED_ITEM_1 := "bow" # Utility 1 contains either bow or sword
 var UTIL_SELECTED_ITEM_2 := "wall" # Utility 2 contains building stuff
+var dead = false
 
 var Utility1Options := ["bow", "hammer"]
 var Utility2Options := ["wall", "trap", "fan"]
@@ -52,6 +54,8 @@ var hammerMaxCooldown := 1.0 # Sword swings slower, but does knockback.
 
 # UTILITY 2 COOLDOWNS
 var wallMaxCooldown := 5.0 # Wall stops enemies (they have to damage the wall)
+var trapMaxCooldown := 8.0 # Wall stops enemies (they have to damage the wall)
+
 
 
 func take_damage(amount: int):
@@ -74,7 +78,11 @@ func take_damage(amount: int):
 	invulnerable = false
 
 func die():
-	print("Player died")
+	deathSound.play()
+	dead = true
+	sprite_2d.play("Death")
+	await get_tree().create_timer(3.0).timeout 
+
 	get_tree().reload_current_scene()
 	# Add death logic here
 
@@ -83,6 +91,8 @@ func start_ladder_climb(target_y: float):
 func _ready():
 	sword_collision.disabled = true
 func _physics_process(delta: float) -> void:
+	if dead:
+		return
 	
 	if Utility1Cooldown > 0:
 		Utility1Cooldown -= delta
@@ -131,8 +141,8 @@ func _physics_process(delta: float) -> void:
 			placeWall()
 		if UTIL_SELECTED_ITEM_2 == "trap":
 			# Currently trap cooldowns use wall cooldowns. 10 seconds.
-			Utility2Cooldown = wallMaxCooldown
-			Utility2MAXCooldown = wallMaxCooldown
+			Utility2Cooldown = trapMaxCooldown
+			Utility2MAXCooldown = trapMaxCooldown
 			placeTrap()
 		if UTIL_SELECTED_ITEM_2 == "fan":
 			Utility2Cooldown = wallMaxCooldown

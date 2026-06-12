@@ -57,9 +57,9 @@ func _on_hurtbox_area_entered(area):
 	if area.is_in_group("trap"):
 		getHurt()
 	
-	if area.is_in_group("wall"):
-		isTouchingWall = true
-		wall_in_hitbox = area
+	#if area.is_in_group("wall"):
+		#isTouchingWall = true
+		#wall_in_hitbox = area
 		
 	if area.is_in_group("fan"):
 		var knockback_strength = 1500.0

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var ricochetSound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @export var animator: AnimatedSprite2D
 @export var ladder_scene: PackedScene
 const SPEED = 90.0
@@ -51,7 +52,8 @@ func _on_hurtbox_area_entered(area):
 		knockback = explosion_force * -1
 		
 	if area.is_in_group("arrow"):
-		getHurt()
+		#getHurt()
+		ricochetSound.play()
 		var arrow = area.get_parent()
 		arrow.destroy()
 	if area.is_in_group("trap"):

@@ -6,8 +6,8 @@ var SPEED = 100.0
 var JUMP_VELOCITY = -850.0
 var player: CharacterBody2D
 var jumpTimer:= 0.0
-var jumpDelayMin:= 1.0
-var jumpDelayMax:= 4.0
+var jumpDelayMin:= 0.1
+var jumpDelayMax:= 0.5
 var health = 2.0
 var maxHealth = 2.0
 var player_in_hitbox = null # Only used for extra stuff. Ignore this
@@ -38,7 +38,7 @@ func _ready():
 			animator.play("GREEN")
 			maxHealth = 1.0
 			health = 1.0
-			SPEED = 175.0
+			SPEED = 200.0
 			JUMP_VELOCITY = -850.0
 			jumpDelayMax = 2.0
 			jumpDelayMin = 1.0

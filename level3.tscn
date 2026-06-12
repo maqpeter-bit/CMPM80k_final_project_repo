@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dfyl4p8fts6v8" path="res://ArtAssets/Extras/ExitTrue.png" id="3_itrrf"]
 [ext_resource type="Script" uid="uid://d208vybtkr5fj" path="res://Scripts/level_controller.gd" id="4_mr4ff"]
 [ext_resource type="Script" uid="uid://kkuyq8q3qxrv" path="res://Scripts/enemy_spawn_data.gd" id="5_0bsag"]
+[ext_resource type="PackedScene" uid="uid://67qyv6ejyemi" path="res://TwoShotGround.tscn" id="6_s3sn0"]
 [ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://Scripts/ladder_builder.gd" id="7_7s766"]
 [ext_resource type="PackedScene" uid="uid://divdq70hqgwsq" path="res://OneShotGround.tscn" id="7_itrrf"]
 [ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="8_dev55"]
@@ -109,52 +110,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Resource" id="Resource_nauge"]
+[sub_resource type="Resource" id="Resource_itrrf"]
 script = ExtResource("5_0bsag")
 enemy_scene = ExtResource("7_itrrf")
 ladder_drop_chance = 25
-metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
-
-[sub_resource type="Resource" id="Resource_ycv2e"]
-script = ExtResource("5_0bsag")
-enemy_scene = ExtResource("7_itrrf")
-ladder_drop_chance = 25
-metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
-
-[sub_resource type="Resource" id="Resource_c5gc3"]
-script = ExtResource("5_0bsag")
-enemy_scene = ExtResource("7_itrrf")
-ladder_drop_chance = 25
-metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
-
-[sub_resource type="Resource" id="Resource_6e4cv"]
-script = ExtResource("5_0bsag")
-enemy_scene = ExtResource("7_itrrf")
-ladder_drop_chance = 25
-metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
-
-[sub_resource type="Resource" id="Resource_uuy0h"]
-script = ExtResource("5_0bsag")
-enemy_scene = ExtResource("7_itrrf")
-ladder_drop_chance = 25
-metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
-
-[sub_resource type="Resource" id="Resource_52iny"]
-script = ExtResource("5_0bsag")
-enemy_scene = ExtResource("7_itrrf")
-ladder_drop_chance = 25
-metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
-
-[sub_resource type="Resource" id="Resource_nxqqj"]
-script = ExtResource("5_0bsag")
-enemy_scene = ExtResource("7_itrrf")
-ladder_drop_chance = 25
+allowed_pipes = Array[int]([0, 2, 3])
 metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
 
 [sub_resource type="Resource" id="Resource_mr4ff"]
 script = ExtResource("5_0bsag")
-enemy_scene = ExtResource("7_itrrf")
-ladder_drop_chance = 100
+enemy_scene = ExtResource("6_s3sn0")
+ladder_drop_chance = 40
+allowed_pipes = Array[int]([1])
 metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy4tn"]
@@ -828,10 +795,10 @@ scale = Vector2(0.5, 0.5)
 
 [node name="LevelController" type="Node2D" parent="." unique_id=200563611 node_paths=PackedStringArray("pipes", "ladder_builder")]
 script = ExtResource("4_mr4ff")
-enemy_queue = Array[ExtResource("5_0bsag")]([SubResource("Resource_nauge"), SubResource("Resource_ycv2e"), SubResource("Resource_c5gc3"), SubResource("Resource_6e4cv"), SubResource("Resource_uuy0h"), SubResource("Resource_52iny"), SubResource("Resource_nxqqj"), SubResource("Resource_mr4ff"), SubResource("Resource_mr4ff"), SubResource("Resource_mr4ff")])
-spawn_intervalMin = 0.7
+enemy_queue = Array[ExtResource("5_0bsag")]([SubResource("Resource_itrrf"), SubResource("Resource_itrrf"), SubResource("Resource_itrrf"), SubResource("Resource_itrrf"), SubResource("Resource_itrrf"), SubResource("Resource_itrrf"), SubResource("Resource_itrrf"), SubResource("Resource_itrrf"), SubResource("Resource_itrrf"), SubResource("Resource_itrrf"), SubResource("Resource_mr4ff")])
+spawn_intervalMin = 0.4
 spawn_intervalMax = 1.0
-bagRefillTime = 3.0
+bagRefillTime = 10.0
 pipes = [NodePath("../Pipe1/PipeSpawnPoint"), NodePath("../Pipe2/PipeSpawnPoint"), NodePath("../Pipe3/PipeSpawnPoint"), NodePath("../Pipe4/PipeSpawnPoint")]
 ladder_builder = NodePath("../LadderBuilder")
 

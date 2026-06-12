@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqq66e0q4nwub"]
 
 [ext_resource type="Script" uid="uid://bs1rb6sn211hf" path="res://Scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://cqwu3lhcopjsr" path="res://ArtAssets/Extras/mainchardead.png" id="2_d6rpx"]
 [ext_resource type="Texture2D" uid="uid://nyw7tb1kb0od" path="res://ArtAssets/Extras/maincharv2.png" id="2_l6ohk"]
 [ext_resource type="AudioStream" uid="uid://dsch3fkirg57p" path="res://Sounds/bowShoot.wav" id="3_e80uo"]
 [ext_resource type="AudioStream" uid="uid://d0iirh8qqsjt7" path="res://Sounds/playerJump.wav" id="3_kne1u"]
@@ -12,6 +13,23 @@
 [ext_resource type="AudioStream" uid="uid://citqvam23xf0j" path="res://Sounds/switchUtility.wav" id="7_l6ohk"]
 [ext_resource type="Texture2D" uid="uid://f6tj6pu3nqi3" path="res://ArtAssets/Extras/SwordSwing.png" id="8_5ncpa"]
 [ext_resource type="AudioStream" uid="uid://juddfjcw2kca" path="res://Sounds/tabItems.wav" id="8_oudfo"]
+[ext_resource type="AudioStream" uid="uid://bdvl5jnexeqnb" path="res://Sounds/PlayerDeath.wav" id="9_oudfo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg6sq"]
+atlas = ExtResource("2_d6rpx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h84ma"]
+atlas = ExtResource("2_d6rpx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47wu6"]
+atlas = ExtResource("2_d6rpx")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n1s8"]
+atlas = ExtResource("2_d6rpx")
+region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efikj"]
 atlas = ExtResource("2_l6ohk")
@@ -31,6 +49,23 @@ region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3tkgg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg6sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h84ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47wu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n1s8")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_efikj")
@@ -141,8 +176,9 @@ arrow_container = NodePath("HammerHitBox/HammerVisual")
 position = Vector2(0, 8)
 scale = Vector2(1.85, 1.85)
 sprite_frames = SubResource("SpriteFrames_3tkgg")
+animation = &"Death"
 autoplay = "default"
-frame_progress = 0.03701166
+frame_progress = 0.19532974
 
 [node name="playerCollision" type="CollisionShape2D" parent="." unique_id=507559346]
 position = Vector2(1, 4.000002)
@@ -167,6 +203,9 @@ stream = ExtResource("7_l6ohk")
 
 [node name="TabItem" type="AudioStreamPlayer2D" parent="." unique_id=213018745]
 stream = ExtResource("8_oudfo")
+
+[node name="DEATH" type="AudioStreamPlayer2D" parent="." unique_id=670230541]
+stream = ExtResource("9_oudfo")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1596035327]
 stream = ExtResource("3_kne1u")
