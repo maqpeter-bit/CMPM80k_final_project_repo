@@ -12,6 +12,9 @@ extends Node2D
 
 @export var UtilityBowTexture: Texture
 @export var UtilityHammerTexture: Texture
+@export var UtilityWallTexture: Texture
+@export var UtilityTrapTexture: Texture
+@export var UtilityFanTexture: Texture
 
 
 # Called when the node enters the scene tree for the first time.
@@ -32,7 +35,13 @@ func _process(delta: float) -> void:
 		Utility1Icon.texture = UtilityBowTexture
 	elif player.UTIL_SELECTED_ITEM_1 == "hammer":
 		Utility1Icon.texture = UtilityHammerTexture
-		
+	if player.UTIL_SELECTED_ITEM_2 == "wall":
+		Utility2Icon.texture = UtilityWallTexture
+	elif player.UTIL_SELECTED_ITEM_2 == "trap":
+		Utility2Icon.texture = UtilityTrapTexture
+	elif player.UTIL_SELECTED_ITEM_2 == "fan":
+		Utility2Icon.texture = UtilityFanTexture
+
 	if player.utilitySwap1or2 == 1:
 		selectItemVisual.position.y = 84.0
 	else:

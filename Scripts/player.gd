@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 # Player is originally a CharacterBody2D node back in its own scene. 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var hammer_sprite_2d: AnimatedSprite2D
 @export var hammerHitbox := Node2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
@@ -26,7 +26,7 @@ class_name Player
 const SPEED = 360.0
 const JUMP_VELOCITY = -700.0
 var climbing_ladder := false
-var climb_target_y := 100.0
+var climb_target_y := 140.0
 var maxPlayerHealth := 5
 var playerHealth := maxPlayerHealth
 var invulnerable := false
@@ -204,9 +204,10 @@ func shoot_arrow():
 	var arrow = ArrowScene.instantiate()
 	arrow_container.add_child(arrow)
 
-	arrow.global_position = global_position
-	
 	var direction = (get_global_mouse_position() - global_position).normalized()
+	var spawn_offset = 40
+
+	arrow.global_position = global_position + direction * spawn_offset
 	arrow.launch(direction * 450, direction.angle())
 	
 func hammerAttack():

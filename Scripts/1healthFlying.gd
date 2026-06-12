@@ -30,7 +30,7 @@ var current_hover_y = 0.0
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 
-	hover_y = global_position.y + randi_range(350, 500)
+	hover_y = global_position.y + randi_range(200, 250)
 	current_hover_y = hover_y
 	fly_time = randf_range(0.0, TAU)
 

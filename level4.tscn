@@ -1,49 +1,51 @@
-[gd_scene format=4 uid="uid://daykgbmlm67cw"]
+[gd_scene format=4 uid="uid://btt810cloaur5"]
 
-[ext_resource type="Texture2D" uid="uid://c6vrnkab0ev5u" path="res://ArtAssets/Extras/Background.png" id="1_hp87d"]
-[ext_resource type="Script" uid="uid://d208vybtkr5fj" path="res://Scripts/level_controller.gd" id="1_rmy57"]
-[ext_resource type="Texture2D" uid="uid://cg404gakvug3v" path="res://ArtAssets/Extras/Torch.png" id="2_2x2vu"]
-[ext_resource type="Texture2D" uid="uid://dfyl4p8fts6v8" path="res://ArtAssets/Extras/ExitTrue.png" id="2_gxpff"]
-[ext_resource type="Script" uid="uid://kkuyq8q3qxrv" path="res://Scripts/enemy_spawn_data.gd" id="3_gxpff"]
-[ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://Scripts/ladder_builder.gd" id="3_jifot"]
-[ext_resource type="PackedScene" uid="uid://67qyv6ejyemi" path="res://TwoShotGround.tscn" id="4_2x2vu"]
-[ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="4_3opl0"]
-[ext_resource type="Texture2D" uid="uid://cvsahamjkdpix" path="res://ArtAssets/Tilemap/GroundPlaceholder.png" id="5_dc5vx"]
-[ext_resource type="PackedScene" uid="uid://cqq66e0q4nwub" path="res://Player.tscn" id="6_s8oj7"]
-[ext_resource type="Texture2D" uid="uid://x6t0s6kywvnb" path="res://ArtAssets/Tilemap/RockTile.png" id="7_f8ci1"]
-[ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="7_mw4xc"]
-[ext_resource type="Texture2D" uid="uid://c2sd8vym4yc10" path="res://ArtAssets/Extras/HurtVisual.png" id="9_qulpo"]
-[ext_resource type="Script" uid="uid://dm76g4rf0f7tm" path="res://Scripts/ui_controller.gd" id="13_iakae"]
-[ext_resource type="Texture2D" uid="uid://drlam2q7g473h" path="res://ArtAssets/Extras/Bow_Select_Icon.png" id="14_7mylh"]
-[ext_resource type="Texture2D" uid="uid://cloqt8pvdls2x" path="res://ArtAssets/Extras/Hammer_Select_Icon.png" id="15_3k4dh"]
-[ext_resource type="Texture2D" uid="uid://slxoodyu4232" path="res://ArtAssets/Extras/Wall_Select_Icon.png" id="16_idpoe"]
-[ext_resource type="Texture2D" uid="uid://dgtdqf35stx0t" path="res://ArtAssets/Extras/Spike_Trap_Select_Icon.png" id="17_ggudo"]
-[ext_resource type="Texture2D" uid="uid://cw50otgtm8gov" path="res://ArtAssets/Extras/Fan_Select_Icon.png" id="18_y2jff"]
-[ext_resource type="Texture2D" uid="uid://7d6djq1afmqx" path="res://ArtAssets/Extras/SelectAnimation.png" id="19_545ku"]
-[ext_resource type="Texture2D" uid="uid://bwl5gd7f33ivo" path="res://ArtAssets/Extras/gate3.png" id="21_2x2vu"]
+[ext_resource type="Texture2D" uid="uid://c6vrnkab0ev5u" path="res://ArtAssets/Extras/Background.png" id="1_pbbpa"]
+[ext_resource type="Texture2D" uid="uid://cg404gakvug3v" path="res://ArtAssets/Extras/Torch.png" id="2_vy5se"]
+[ext_resource type="Texture2D" uid="uid://dfyl4p8fts6v8" path="res://ArtAssets/Extras/ExitTrue.png" id="3_uggel"]
+[ext_resource type="Script" uid="uid://d208vybtkr5fj" path="res://Scripts/level_controller.gd" id="4_gvnba"]
+[ext_resource type="Script" uid="uid://kkuyq8q3qxrv" path="res://Scripts/enemy_spawn_data.gd" id="5_r0a5s"]
+[ext_resource type="PackedScene" uid="uid://divdq70hqgwsq" path="res://OneShotGround.tscn" id="6_2byqe"]
+[ext_resource type="PackedScene" uid="uid://67qyv6ejyemi" path="res://TwoShotGround.tscn" id="6_x8n7k"]
+[ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://Scripts/ladder_builder.gd" id="7_vc8vp"]
+[ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="8_0fpet"]
+[ext_resource type="PackedScene" uid="uid://c4tstmgxo8n7w" path="res://OneShotFlying.tscn" id="8_vy5se"]
+[ext_resource type="Texture2D" uid="uid://x6t0s6kywvnb" path="res://ArtAssets/Tilemap/RockTile.png" id="9_tbmqs"]
+[ext_resource type="Texture2D" uid="uid://cvsahamjkdpix" path="res://ArtAssets/Tilemap/GroundPlaceholder.png" id="10_pvxkt"]
+[ext_resource type="PackedScene" uid="uid://cqq66e0q4nwub" path="res://Player.tscn" id="11_8k7pq"]
+[ext_resource type="Texture2D" uid="uid://ctt88u31kobra" path="res://ArtAssets/Extras/Exit.png" id="12_a6yfa"]
+[ext_resource type="Texture2D" uid="uid://c2sd8vym4yc10" path="res://ArtAssets/Extras/HurtVisual.png" id="13_u2x08"]
+[ext_resource type="Script" uid="uid://dm76g4rf0f7tm" path="res://Scripts/ui_controller.gd" id="14_c1uhn"]
+[ext_resource type="Texture2D" uid="uid://drlam2q7g473h" path="res://ArtAssets/Extras/Bow_Select_Icon.png" id="15_uinc8"]
+[ext_resource type="Texture2D" uid="uid://cloqt8pvdls2x" path="res://ArtAssets/Extras/Hammer_Select_Icon.png" id="16_abse8"]
+[ext_resource type="Texture2D" uid="uid://slxoodyu4232" path="res://ArtAssets/Extras/Wall_Select_Icon.png" id="17_bvg7o"]
+[ext_resource type="Texture2D" uid="uid://dgtdqf35stx0t" path="res://ArtAssets/Extras/Spike_Trap_Select_Icon.png" id="18_3bm21"]
+[ext_resource type="Texture2D" uid="uid://cw50otgtm8gov" path="res://ArtAssets/Extras/Fan_Select_Icon.png" id="19_w2pki"]
+[ext_resource type="Texture2D" uid="uid://7d6djq1afmqx" path="res://ArtAssets/Extras/SelectAnimation.png" id="20_bf85e"]
+[ext_resource type="Texture2D" uid="uid://dwvh868mhsbfx" path="res://ArtAssets/Extras/gate1.png" id="22_baf5v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ycv2e"]
-atlas = ExtResource("1_hp87d")
+atlas = ExtResource("1_pbbpa")
 region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c5gc3"]
-atlas = ExtResource("1_hp87d")
+atlas = ExtResource("1_pbbpa")
 region = Rect2(256, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6e4cv"]
-atlas = ExtResource("1_hp87d")
+atlas = ExtResource("1_pbbpa")
 region = Rect2(0, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uuy0h"]
-atlas = ExtResource("1_hp87d")
+atlas = ExtResource("1_pbbpa")
 region = Rect2(256, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_52iny"]
-atlas = ExtResource("1_hp87d")
+atlas = ExtResource("1_pbbpa")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxqqj"]
-atlas = ExtResource("1_hp87d")
+atlas = ExtResource("1_pbbpa")
 region = Rect2(256, 512, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7nyxr"]
@@ -73,19 +75,19 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_quvj1"]
-atlas = ExtResource("2_2x2vu")
+atlas = ExtResource("2_vy5se")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4n62"]
-atlas = ExtResource("2_2x2vu")
+atlas = ExtResource("2_vy5se")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rg4ux"]
-atlas = ExtResource("2_2x2vu")
+atlas = ExtResource("2_vy5se")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yytgh"]
-atlas = ExtResource("2_2x2vu")
+atlas = ExtResource("2_vy5se")
 region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f8ci1"]
@@ -108,53 +110,51 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Resource" id="Resource_nauge"]
-script = ExtResource("3_gxpff")
-enemy_scene = ExtResource("4_2x2vu")
-ladder_drop_chance = 50
+[sub_resource type="Resource" id="Resource_x8n7k"]
+script = ExtResource("5_r0a5s")
+enemy_scene = ExtResource("6_x8n7k")
+allowed_pipes = Array[int]([0])
 metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
 
-[sub_resource type="Resource" id="Resource_ycv2e"]
-script = ExtResource("3_gxpff")
-enemy_scene = ExtResource("4_2x2vu")
-ladder_drop_chance = 50
+[sub_resource type="Resource" id="Resource_pbbpa"]
+script = ExtResource("5_r0a5s")
+enemy_scene = ExtResource("6_x8n7k")
+allowed_pipes = Array[int]([1])
 metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
 
-[sub_resource type="Resource" id="Resource_c5gc3"]
-script = ExtResource("3_gxpff")
-enemy_scene = ExtResource("4_2x2vu")
-ladder_drop_chance = 50
+[sub_resource type="Resource" id="Resource_vy5se"]
+script = ExtResource("5_r0a5s")
+enemy_scene = ExtResource("6_2byqe")
+ladder_drop_chance = 5
+allowed_pipes = Array[int]([0])
 metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
 
-[sub_resource type="Resource" id="Resource_6e4cv"]
-script = ExtResource("3_gxpff")
-enemy_scene = ExtResource("4_2x2vu")
-ladder_drop_chance = 50
+[sub_resource type="Resource" id="Resource_uggel"]
+script = ExtResource("5_r0a5s")
+enemy_scene = ExtResource("6_2byqe")
+ladder_drop_chance = 5
+allowed_pipes = Array[int]([1])
 metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
 
-[sub_resource type="Resource" id="Resource_uuy0h"]
-script = ExtResource("3_gxpff")
-enemy_scene = ExtResource("4_2x2vu")
-ladder_drop_chance = 50
+[sub_resource type="Resource" id="Resource_gvnba"]
+script = ExtResource("5_r0a5s")
+enemy_scene = ExtResource("8_vy5se")
+ladder_drop_chance = 75
+allowed_pipes = Array[int]([2])
 metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
 
-[sub_resource type="Resource" id="Resource_52iny"]
-script = ExtResource("3_gxpff")
-enemy_scene = ExtResource("4_2x2vu")
-ladder_drop_chance = 50
-metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
-
-[sub_resource type="Resource" id="Resource_nxqqj"]
-script = ExtResource("3_gxpff")
-enemy_scene = ExtResource("4_2x2vu")
-ladder_drop_chance = 50
+[sub_resource type="Resource" id="Resource_r0a5s"]
+script = ExtResource("5_r0a5s")
+enemy_scene = ExtResource("8_vy5se")
+ladder_drop_chance = 75
+allowed_pipes = Array[int]([3])
 metadata/_custom_type_script = "uid://kkuyq8q3qxrv"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy4tn"]
 size = Vector2(20, 150.08333)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_beq0j"]
-texture = ExtResource("7_f8ci1")
+texture = ExtResource("9_tbmqs")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -189,7 +189,7 @@ texture = ExtResource("7_f8ci1")
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xy4tn"]
-texture = ExtResource("5_dc5vx")
+texture = ExtResource("10_pvxkt")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -648,27 +648,27 @@ sources/2 = SubResource("TileSetAtlasSource_xy4tn")
 sources/1 = SubResource("TileSetAtlasSource_beq0j")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_usj0q"]
-atlas = ExtResource("9_qulpo")
+atlas = ExtResource("13_u2x08")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j5gb"]
-atlas = ExtResource("9_qulpo")
+atlas = ExtResource("13_u2x08")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mx85b"]
-atlas = ExtResource("9_qulpo")
+atlas = ExtResource("13_u2x08")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hx44q"]
-atlas = ExtResource("9_qulpo")
+atlas = ExtResource("13_u2x08")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8vhr"]
-atlas = ExtResource("9_qulpo")
+atlas = ExtResource("13_u2x08")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqrsh"]
-atlas = ExtResource("9_qulpo")
+atlas = ExtResource("13_u2x08")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rjtee"]
@@ -698,27 +698,27 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_beq0j"]
-atlas = ExtResource("19_545ku")
+atlas = ExtResource("20_bf85e")
 region = Rect2(128, 128, 128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nauge"]
-atlas = ExtResource("19_545ku")
+atlas = ExtResource("20_bf85e")
 region = Rect2(0, 0, 128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7nyxr"]
-atlas = ExtResource("19_545ku")
+atlas = ExtResource("20_bf85e")
 region = Rect2(128, 0, 128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_43lh3"]
-atlas = ExtResource("19_545ku")
+atlas = ExtResource("20_bf85e")
 region = Rect2(0, 64, 128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5le63"]
-atlas = ExtResource("19_545ku")
+atlas = ExtResource("20_bf85e")
 region = Rect2(128, 64, 128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pieet"]
-atlas = ExtResource("19_545ku")
+atlas = ExtResource("20_bf85e")
 region = Rect2(0, 128, 128, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_52iny"]
@@ -772,18 +772,19 @@ size = Vector2(27.958336, 70)
 scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=998840661]
-modulate = Color(0.76927924, 0.71216035, 0.69270504, 1)
+modulate = Color(0.6849175, 0.7552423, 0.606359, 1)
 position = Vector2(218.16669, 120.00002)
 scale = Vector2(1.7018231, 0.9348959)
 sprite_frames = SubResource("SpriteFrames_7nyxr")
 autoplay = "default"
 frame_progress = 0.13347325
-flip_h = true
+flip_v = true
 
 [node name="TorchParent" type="Node2D" parent="." unique_id=611368882]
 
 [node name="Torch" type="Node2D" parent="TorchParent" unique_id=889770343]
-position = Vector2(80.333336, 177)
+position = Vector2(97, 170)
+rotation = -0.086144224
 scale = Vector2(0.5, 0.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TorchParent/Torch" unique_id=541487728]
@@ -791,17 +792,9 @@ sprite_frames = SubResource("SpriteFrames_f8ci1")
 autoplay = "default"
 speed_scale = 2.0
 
-[node name="Torch2" type="Node2D" parent="TorchParent" unique_id=1558005979]
-position = Vector2(200, 177)
-scale = Vector2(0.5, 0.5)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TorchParent/Torch2" unique_id=125523355]
-sprite_frames = SubResource("SpriteFrames_f8ci1")
-autoplay = "default"
-speed_scale = 2.0
-
 [node name="Torch3" type="Node2D" parent="TorchParent" unique_id=1577229199]
-position = Vector2(320, 177)
+position = Vector2(350.6667, 131.66666)
+rotation = 0.13432144
 scale = Vector2(0.5, 0.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TorchParent/Torch3" unique_id=436576947]
@@ -813,17 +806,18 @@ speed_scale = 2.0
 modulate = Color(0.5372549, 0.5137255, 0.73333335, 0.6)
 position = Vector2(216.33336, 209.66667)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_gxpff")
+texture = ExtResource("3_uggel")
 
 [node name="Arrows" type="Node2D" parent="." unique_id=1138727819]
 scale = Vector2(0.5, 0.5)
 
 [node name="LevelController" type="Node2D" parent="." unique_id=200563611 node_paths=PackedStringArray("pipes", "ladder_builder")]
-script = ExtResource("1_rmy57")
-enemy_queue = Array[ExtResource("3_gxpff")]([SubResource("Resource_nauge"), SubResource("Resource_ycv2e"), SubResource("Resource_c5gc3"), SubResource("Resource_6e4cv"), SubResource("Resource_uuy0h"), SubResource("Resource_52iny"), SubResource("Resource_nxqqj")])
+script = ExtResource("4_gvnba")
+enemy_queue = Array[ExtResource("5_r0a5s")]([SubResource("Resource_x8n7k"), SubResource("Resource_pbbpa"), SubResource("Resource_vy5se"), SubResource("Resource_uggel"), SubResource("Resource_gvnba"), SubResource("Resource_r0a5s")])
 spawn_intervalMin = 0.7
-spawn_intervalMax = 1.3
-pipes = [NodePath("../Pipe1/PipeSpawnPoint"), NodePath("../Pipe2/PipeSpawnPoint")]
+spawn_intervalMax = 1.0
+bagRefillTime = 1.0
+pipes = [NodePath("../Pipe1/PipeSpawnPoint"), NodePath("../Pipe2/PipeSpawnPoint"), NodePath("../Pipe3/PipeSpawnPoint"), NodePath("../Pipe4/PipeSpawnPoint")]
 ladder_builder = NodePath("../LadderBuilder")
 
 [node name="LadderContainer" type="Node2D" parent="." unique_id=256206591]
@@ -831,8 +825,8 @@ position = Vector2(216.33334, 212.66667)
 
 [node name="LadderBuilder" type="Node2D" parent="." unique_id=1877225268 node_paths=PackedStringArray("ladder_container")]
 position = Vector2(216.333, 212.75)
-script = ExtResource("3_jifot")
-ladder_piece_scene = ExtResource("4_3opl0")
+script = ExtResource("7_vc8vp")
+ladder_piece_scene = ExtResource("8_0fpet")
 ladder_container = NodePath("../LadderContainer")
 
 [node name="ClimbTrigger" type="Area2D" parent="LadderBuilder" unique_id=1505597229]
@@ -843,7 +837,7 @@ scale = Vector2(0.5333333, 1)
 shape = SubResource("RectangleShape2D_xy4tn")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1824294067 groups=["wall"]]
-modulate = Color(0.67481464, 0.67481464, 0.6748146, 1)
+modulate = Color(0.721786, 0.6749525, 0.5126498, 1)
 position = Vector2(-2.6666667, 0)
 tile_map_data = PackedByteArray("AAAAAA4AAQAAAAAAAAABAA4AAQABAAAAAAACAA4AAQACAAAAAAADAA4AAQADAAAAAAAEAA4AAQAAAAAAAAAFAA4AAQABAAAAAAAGAA4AAQACAAAAAAAHAA4AAQADAAAAAAAIAA4AAQABAAAAAAAJAA4AAQAAAAAAAAAKAA4AAQABAAAAAAALAA4AAQACAAAAAAAMAA4AAQADAAAAAAANAA4AAQABAAAAAAAOAA4AAQACAAAAAAAPAA4AAQADAAAAAAAQAA4AAQAAAAAAAAARAA4AAQABAAAAAAASAA4AAQACAAAAAAATAA4AAQADAAAAAAAUAA4AAQAAAAAAAAAVAA4AAQABAAAAAAAWAA4AAQACAAAAAAAXAA4AAQADAAAAAAAYAA4AAQABAAAAAAAZAA4AAQACAAAAAAAaAA4AAQAAAAMAAAAAAA0AAQADAAMAAAAAAAwAAQADAAIAAAAAAAsAAQADAAEAAAAAAAoAAQADAAAAAAAAAAkAAQADAAMAAAAAAAgAAQADAAIAAAAAAAcAAQADAAEAAAAAAAYAAQADAAAAAAAAAAUAAQADAAIAAAAAAAQAAQADAAEAAAAAAAMAAQADAAAAAAAAAAIAAQADAAIAAAAAAAEAAQADAAEAAAAaAA0AAQAAAAIAAAAaAAwAAQAAAAEAAAAaAAsAAQAAAAAAAAAaAAoAAQAAAAMAAAAaAAkAAQAAAAIAAAAaAAgAAQAAAAEAAAAaAAcAAQAAAAAAAAAaAAYAAQAAAAMAAAAaAAUAAQAAAAIAAAAaAAQAAQAAAAEAAAAaAAMAAQAAAAMAAAAAAAAAAQADAAAAAAABAAAAAQABAAMAAAACAAAAAQACAAMAAAADAAAAAQADAAMAAAAEAAAAAQACAAMAAAAFAAAAAQADAAMAAAAGAAAAAQABAAMAAAAHAAAAAQACAAMAAAAIAAAAAQADAAMAAAAJAAAAAQAAAAMAAAAKAAAAAQABAAMAAAALAAAAAQACAAMAAAAMAAAAAQADAAMAAAANAAAAAQABAAMAAAAOAAAAAQACAAMAAAAPAAAAAQADAAMAAAAQAAAAAQABAAMAAAARAAAAAQACAAMAAAASAAAAAQADAAMAAAATAAAAAQAAAAMAAAAUAAAAAQABAAMAAAAVAAAAAQACAAMAAAAWAAAAAQADAAMAAAAXAAAAAQAAAAMAAAAYAAAAAQABAAMAAAAZAAAAAQACAAMAAAAaAAAAAQADAAMAAAAaAAEAAQAAAAEAAAAaAAIAAQAAAAIAAAAXAA8AAQADAAEAAAAXABAAAQADAAIAAAAXABEAAQADAAMAAAAYAA8AAQABAAEAAAAYABAAAQABAAIAAAAYABEAAQABAAMAAAAZAA8AAQACAAEAAAAZABAAAQACAAIAAAAZABEAAQACAAMAAAAaAA8AAQADAAEAAAAaABAAAQADAAIAAAAaABEAAQADAAMAAAAUAA8AAQAAAAEAAAAUABAAAQAAAAIAAAAUABEAAQAAAAMAAAAVAA8AAQABAAEAAAAVABAAAQABAAIAAAAVABEAAQABAAMAAAAWAA8AAQACAAEAAAAWABAAAQACAAIAAAAWABEAAQACAAMAAAAQAA8AAQAAAAEAAAAQABAAAQAAAAIAAAAQABEAAQAAAAMAAAARAA8AAQABAAEAAAARABAAAQABAAIAAAARABEAAQABAAMAAAASAA8AAQACAAEAAAASABAAAQACAAIAAAASABEAAQACAAMAAAATAA8AAQADAAEAAAATABAAAQADAAIAAAATABEAAQADAAMAAAAMAA8AAQADAAEAAAAMABAAAQADAAIAAAAMABEAAQADAAMAAAANAA8AAQABAAEAAAANABAAAQABAAIAAAANABEAAQABAAMAAAAOAA8AAQACAAEAAAAOABAAAQACAAIAAAAOABEAAQACAAMAAAAPAA8AAQADAAEAAAAPABAAAQADAAIAAAAPABEAAQADAAMAAAAHAA8AAQADAAEAAAAHABAAAQADAAIAAAAHABEAAQADAAMAAAAIAA8AAQABAAEAAAAIABAAAQABAAIAAAAIABEAAQABAAMAAAAJAA8AAQAAAAEAAAAJABAAAQAAAAIAAAAJABEAAQAAAAMAAAAKAA8AAQABAAEAAAAKABAAAQABAAIAAAAKABEAAQABAAMAAAAAAA8AAQAAAAEAAAAAABAAAQAAAAIAAAAAABEAAQAAAAMAAAABAA8AAQABAAEAAAABABAAAQABAAIAAAABABEAAQABAAMAAAACAA8AAQACAAEAAAACABAAAQACAAIAAAACABEAAQACAAMAAAADAA8AAQADAAEAAAADABAAAQADAAIAAAADABEAAQADAAMAAAAEAA8AAQAAAAEAAAAEABAAAQAAAAIAAAAEABEAAQAAAAMAAAAFAA8AAQABAAEAAAAFABAAAQABAAIAAAAFABEAAQABAAMAAAAGAA8AAQACAAEAAAAGABAAAQACAAIAAAAGABEAAQACAAMAAAALAA8AAQACAAEAAAALABAAAQACAAIAAAALABEAAQACAAMAAAAbAAsAAQABAAAAAAAbAAwAAQABAAEAAAAbAA0AAQABAAIAAAAbAA4AAQABAAMAAAAcAAsAAQACAAAAAAAcAAwAAQACAAEAAAAcAA0AAQACAAIAAAAcAA4AAQACAAMAAAAdAAsAAQADAAAAAAAdAAwAAQADAAEAAAAdAA0AAQADAAIAAAAdAA4AAQADAAMAAAAbAAcAAQABAAAAAAAbAAgAAQABAAEAAAAbAAkAAQABAAIAAAAbAAoAAQABAAMAAAAcAAcAAQACAAAAAAAcAAgAAQACAAEAAAAcAAkAAQACAAIAAAAcAAoAAQACAAMAAAAdAAcAAQADAAAAAAAdAAgAAQADAAEAAAAdAAkAAQADAAIAAAAdAAoAAQADAAMAAAAbAAIAAQABAAIAAAAbAAMAAQABAAMAAAAbAAQAAQABAAEAAAAbAAUAAQABAAIAAAAcAAIAAQACAAIAAAAcAAMAAQACAAMAAAAcAAQAAQACAAEAAAAcAAUAAQACAAIAAAAdAAIAAQADAAIAAAAdAAMAAQADAAMAAAAdAAQAAQADAAEAAAAdAAUAAQADAAIAAAAbAAYAAQABAAMAAAAcAAYAAQACAAMAAAAdAAYAAQADAAMAAAAbAAAAAQABAAAAAAAbAAEAAQABAAEAAAAcAAAAAQACAAAAAAAcAAEAAQACAAEAAAAdAAAAAQADAAAAAAAdAAEAAQADAAEAAAAXAP3/AQAAAAAAAAAXAP7/AQAAAAEAAAAXAP//AQAAAAIAAAAYAP3/AQABAAAAAAAYAP7/AQABAAEAAAAYAP//AQABAAIAAAAZAP3/AQACAAAAAAAZAP7/AQACAAEAAAAZAP//AQACAAIAAAAaAP3/AQADAAAAAAAaAP7/AQADAAEAAAAaAP//AQADAAIAAAATAP3/AQAAAAAAAAATAP7/AQAAAAEAAAATAP//AQAAAAIAAAAUAP3/AQABAAAAAAAUAP7/AQABAAEAAAAUAP//AQABAAIAAAAVAP3/AQACAAAAAAAVAP7/AQACAAEAAAAVAP//AQACAAIAAAAWAP3/AQADAAAAAAAWAP7/AQADAAEAAAAWAP//AQADAAIAAAAPAP3/AQADAAAAAAAPAP7/AQADAAEAAAAPAP//AQADAAIAAAAQAP3/AQABAAAAAAAQAP7/AQABAAEAAAAQAP//AQABAAIAAAARAP3/AQACAAAAAAARAP7/AQACAAEAAAARAP//AQACAAIAAAASAP3/AQADAAAAAAASAP7/AQADAAEAAAASAP//AQADAAIAAAAMAP3/AQADAAAAAAAMAP7/AQADAAEAAAAMAP//AQADAAIAAAANAP3/AQABAAAAAAANAP7/AQABAAEAAAANAP//AQABAAIAAAAOAP3/AQACAAAAAAAOAP7/AQACAAEAAAAOAP//AQACAAIAAAAJAP3/AQAAAAAAAAAJAP7/AQAAAAEAAAAJAP//AQAAAAIAAAAKAP3/AQABAAAAAAAKAP7/AQABAAEAAAAKAP//AQABAAIAAAALAP3/AQACAAAAAAALAP7/AQACAAEAAAALAP//AQACAAIAAAAFAP3/AQADAAAAAAAFAP7/AQADAAEAAAAFAP//AQADAAIAAAAGAP3/AQABAAAAAAAGAP7/AQABAAEAAAAGAP//AQABAAIAAAAHAP3/AQACAAAAAAAHAP7/AQACAAEAAAAHAP//AQACAAIAAAAIAP3/AQADAAAAAAAIAP7/AQADAAEAAAAIAP//AQADAAIAAAACAP3/AQACAAAAAAACAP7/AQACAAEAAAACAP//AQACAAIAAAADAP3/AQADAAAAAAADAP7/AQADAAEAAAADAP//AQADAAIAAAAEAP3/AQACAAAAAAAEAP7/AQACAAEAAAAEAP//AQACAAIAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAEAAAAAAP//AQAAAAIAAAABAP3/AQABAAAAAAABAP7/AQABAAEAAAABAP//AQABAAIAAAD9/wAAAQAAAAAAAAD9/wEAAQAAAAEAAAD9/wIAAQAAAAIAAAD9/wMAAQAAAAAAAAD+/wAAAQABAAAAAAD+/wEAAQABAAEAAAD+/wIAAQABAAIAAAD+/wMAAQABAAAAAAD//wAAAQACAAAAAAD//wEAAQACAAEAAAD//wIAAQACAAIAAAD//wMAAQACAAAAAAD9/wQAAQAAAAEAAAD9/wUAAQAAAAIAAAD9/wYAAQAAAAAAAAD+/wQAAQABAAEAAAD+/wUAAQABAAIAAAD+/wYAAQABAAAAAAD//wQAAQACAAEAAAD//wUAAQACAAIAAAD//wYAAQACAAAAAAD9/wcAAQAAAAEAAAD9/wgAAQAAAAIAAAD9/wkAAQAAAAMAAAD+/wcAAQABAAEAAAD+/wgAAQABAAIAAAD+/wkAAQABAAMAAAD//wcAAQACAAEAAAD//wgAAQACAAIAAAD//wkAAQACAAMAAAD9/woAAQAAAAAAAAD9/wsAAQAAAAEAAAD9/wwAAQAAAAIAAAD9/w0AAQAAAAMAAAD+/woAAQABAAAAAAD+/wsAAQABAAEAAAD+/wwAAQABAAIAAAD+/w0AAQABAAMAAAD//woAAQACAAAAAAD//wsAAQACAAEAAAD//wwAAQACAAIAAAD//w0AAQACAAMAAAA=")
 tile_set = SubResource("TileSet_4d4qa")
@@ -852,13 +846,13 @@ tile_set = SubResource("TileSet_4d4qa")
 modulate = Color(0.5372549, 0.5137255, 0.73333335, 1)
 position = Vector2(216.33334, 58.333336)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_mw4xc")
+texture = ExtResource("12_a6yfa")
 
-[node name="Player" parent="." unique_id=1082196993 node_paths=PackedStringArray("arrow_container") instance=ExtResource("6_s8oj7")]
+[node name="Player" parent="." unique_id=1082196993 node_paths=PackedStringArray("arrow_container") instance=ExtResource("11_8k7pq")]
 position = Vector2(216.33334, 208.00005)
 collision_layer = 1
 collision_mask = 1
-next_level = "res://Tutorial3.tscn"
+next_level = "res://Tutorial4.tscn"
 arrow_container = NodePath("../Arrows")
 
 [node name="HurtVisual" type="AnimatedSprite2D" parent="." unique_id=1672376153 groups=["hurt_visual"]]
@@ -873,7 +867,7 @@ metadata/_edit_lock_ = true
 [node name="CanvasLayer (UI stuff)" type="CanvasLayer" parent="." unique_id=1055725370]
 
 [node name="UIController" type="Node2D" parent="CanvasLayer (UI stuff)" unique_id=1819813918 node_paths=PackedStringArray("player", "healthBar", "Utility1Icon", "Utility2Icon", "Utility1Bar", "Utility2Bar", "selectItemVisual")]
-script = ExtResource("13_iakae")
+script = ExtResource("14_c1uhn")
 player = NodePath("../../Player")
 healthBar = NodePath("HealthBar")
 Utility1Icon = NodePath("Utility1Sprite")
@@ -881,11 +875,11 @@ Utility2Icon = NodePath("Utility2Sprite2")
 Utility1Bar = NodePath("Util#1")
 Utility2Bar = NodePath("Util#2")
 selectItemVisual = NodePath("SelectItem")
-UtilityBowTexture = ExtResource("14_7mylh")
-UtilityHammerTexture = ExtResource("15_3k4dh")
-UtilityWallTexture = ExtResource("16_idpoe")
-UtilityTrapTexture = ExtResource("17_ggudo")
-UtilityFanTexture = ExtResource("18_y2jff")
+UtilityBowTexture = ExtResource("15_uinc8")
+UtilityHammerTexture = ExtResource("16_abse8")
+UtilityWallTexture = ExtResource("17_bvg7o")
+UtilityTrapTexture = ExtResource("18_3bm21")
+UtilityFanTexture = ExtResource("19_w2pki")
 
 [node name="SelectItem" type="AnimatedSprite2D" parent="CanvasLayer (UI stuff)/UIController" unique_id=844667534 groups=["SelectItem", "hurt_visual"]]
 position = Vector2(130, 84)
@@ -922,7 +916,7 @@ fill_mode = 1
 [node name="Utility1Sprite" type="Sprite2D" parent="CanvasLayer (UI stuff)/UIController" unique_id=250446733]
 position = Vector2(90, 84)
 scale = Vector2(1.7, 1.7)
-texture = ExtResource("14_7mylh")
+texture = ExtResource("15_uinc8")
 
 [node name="Util#2" type="ProgressBar" parent="CanvasLayer (UI stuff)/UIController" unique_id=487610865]
 offset_left = 137.0
@@ -940,13 +934,13 @@ fill_mode = 1
 [node name="Utility2Sprite2" type="Sprite2D" parent="CanvasLayer (UI stuff)/UIController" unique_id=1881625861]
 position = Vector2(90, 159)
 scale = Vector2(1.7, 1.7)
-texture = ExtResource("16_idpoe")
+texture = ExtResource("17_bvg7o")
 
 [node name="Pipe1" type="Sprite2D" parent="." unique_id=1481153636]
 z_index = 9
 position = Vector2(54.66667, 187.66667)
 scale = Vector2(1.1733329, 1)
-texture = ExtResource("21_2x2vu")
+texture = ExtResource("22_baf5v")
 
 [node name="PipeSpawnPoint" type="Node2D" parent="Pipe1" unique_id=564403686]
 position = Vector2(-22.333332, 7.0000005)
@@ -972,7 +966,7 @@ shape = SubResource("RectangleShape2D_iakae")
 z_index = 9
 position = Vector2(371.99997, 187.66667)
 scale = Vector2(-1.173, 1)
-texture = ExtResource("21_2x2vu")
+texture = ExtResource("22_baf5v")
 
 [node name="PipeSpawnPoint" type="Node2D" parent="Pipe2" unique_id=945293983]
 position = Vector2(-22.333332, 7.0000005)
@@ -991,5 +985,60 @@ shape = SubResource("RectangleShape2D_f8ci1")
 [node name="Area2D" type="Area2D" parent="Pipe2" unique_id=1902367403 groups=["destroyArrow(barrier)"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe2/Area2D" unique_id=1823346636]
+position = Vector2(-20.645832, 1)
+shape = SubResource("RectangleShape2D_iakae")
+
+[node name="Pipe3" type="Sprite2D" parent="." unique_id=44363492]
+z_index = 9
+position = Vector2(372.66666, 58.333336)
+rotation = -1.5707964
+scale = Vector2(-1.173, 1)
+texture = ExtResource("22_baf5v")
+
+[node name="PipeSpawnPoint" type="Node2D" parent="Pipe3" unique_id=952982471]
+position = Vector2(-22.333332, 7.0000005)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Pipe3" unique_id=1427253391]
+position = Vector2(-16.333334, 0)
+collision_layer = 3
+collision_mask = 3
+freeze = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pipe3/RigidBody2D" unique_id=1593591927]
+position = Vector2(-4.8125, -25.666672)
+scale = Vector2(0.04265575, 0.0010054995)
+shape = SubResource("RectangleShape2D_f8ci1")
+
+[node name="Area2D" type="Area2D" parent="Pipe3" unique_id=1224596482 groups=["destroyArrow(barrier)"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe3/Area2D" unique_id=887758890]
+position = Vector2(-20.645832, 1)
+shape = SubResource("RectangleShape2D_iakae")
+
+[node name="Pipe4" type="Sprite2D" parent="." unique_id=739862930]
+z_index = 9
+position = Vector2(68.66666, 58.33334)
+rotation = -1.5707964
+scale = Vector2(-1.173, 1)
+texture = ExtResource("22_baf5v")
+flip_v = true
+
+[node name="PipeSpawnPoint" type="Node2D" parent="Pipe4" unique_id=1887260964]
+position = Vector2(-22.333332, 7.0000005)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Pipe4" unique_id=261797310]
+position = Vector2(-16.333334, 0)
+collision_layer = 3
+collision_mask = 3
+freeze = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pipe4/RigidBody2D" unique_id=970125023]
+position = Vector2(-4.8125, -25.666672)
+scale = Vector2(0.04265575, 0.0010054995)
+shape = SubResource("RectangleShape2D_f8ci1")
+
+[node name="Area2D" type="Area2D" parent="Pipe4" unique_id=1408863965 groups=["destroyArrow(barrier)"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe4/Area2D" unique_id=1120082844]
 position = Vector2(-20.645832, 1)
 shape = SubResource("RectangleShape2D_iakae")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqq66e0q4nwub"]
 
 [ext_resource type="Script" uid="uid://bs1rb6sn211hf" path="res://Scripts/player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://b0cp6aa82cix1" path="res://ArtAssets/Player/NewPlayerPlaceholder.png" id="2_e80uo"]
+[ext_resource type="Texture2D" uid="uid://nyw7tb1kb0od" path="res://ArtAssets/Extras/maincharv2.png" id="2_l6ohk"]
 [ext_resource type="AudioStream" uid="uid://dsch3fkirg57p" path="res://Sounds/bowShoot.wav" id="3_e80uo"]
 [ext_resource type="AudioStream" uid="uid://d0iirh8qqsjt7" path="res://Sounds/playerJump.wav" id="3_kne1u"]
 [ext_resource type="AudioStream" uid="uid://nb2fsyft5742" path="res://Sounds/playerHurt.wav" id="4_cxr5p"]
@@ -12,6 +12,42 @@
 [ext_resource type="AudioStream" uid="uid://citqvam23xf0j" path="res://Sounds/switchUtility.wav" id="7_l6ohk"]
 [ext_resource type="Texture2D" uid="uid://f6tj6pu3nqi3" path="res://ArtAssets/Extras/SwordSwing.png" id="8_5ncpa"]
 [ext_resource type="AudioStream" uid="uid://juddfjcw2kca" path="res://Sounds/tabItems.wav" id="8_oudfo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efikj"]
+atlas = ExtResource("2_l6ohk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itxgx"]
+atlas = ExtResource("2_l6ohk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgsek"]
+atlas = ExtResource("2_l6ohk")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pi4m"]
+atlas = ExtResource("2_l6ohk")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tkgg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efikj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itxgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgsek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pi4m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 size = Vector2(40, 342.85712)
@@ -101,10 +137,12 @@ sword_hitbox = NodePath("HammerHitBox/SwordArea2D")
 sword_collision = NodePath("HammerHitBox/SwordArea2D/SworbCollision")
 arrow_container = NodePath("HammerHitBox/HammerVisual")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=682247892]
-position = Vector2(-6.7762636e-21, 4)
-scale = Vector2(1.75, 1.75)
-texture = ExtResource("2_e80uo")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=188772454]
+position = Vector2(0, 8)
+scale = Vector2(1.85, 1.85)
+sprite_frames = SubResource("SpriteFrames_3tkgg")
+autoplay = "default"
+frame_progress = 0.03701166
 
 [node name="playerCollision" type="CollisionShape2D" parent="." unique_id=507559346]
 position = Vector2(1, 4.000002)

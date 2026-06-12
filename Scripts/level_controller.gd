@@ -47,7 +47,16 @@ func start_wave():
 
 func spawn_enemy(enemy_data: EnemySpawnData):
 	var enemy = enemy_data.enemy_scene.instantiate()
-	var pipe = pipes.pick_random()
+
+	var pipe: Node2D
+
+	if enemy_data.allowed_pipes.is_empty():
+		# Spawn from any pipe
+		pipe = pipes.pick_random()
+	else:
+		# Pick from the configured pipes
+		var index = enemy_data.allowed_pipes.pick_random()
+		pipe = pipes[index]
 
 	get_parent().add_child(enemy)
 	enemy.global_position = pipe.global_position

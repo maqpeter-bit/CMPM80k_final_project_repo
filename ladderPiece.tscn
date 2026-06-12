@@ -1,9 +1,25 @@
 [gd_scene format=3 uid="uid://bbvemn175whqr"]
 
-[ext_resource type="Texture2D" uid="uid://cjjssv6xrc21f" path="res://ArtAssets/Extras/Ladder.png" id="1_mex2r"]
+[ext_resource type="Texture2D" uid="uid://b3582r2ua6r4x" path="res://ArtAssets/Extras/Ladder_Animation.png" id="1_mex2r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57bip"]
+atlas = ExtResource("1_mex2r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_200kp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57bip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D" unique_id=2070877418]
 scale = Vector2(0.35, 0.35)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1276153722]
-texture = ExtResource("1_mex2r")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1941950237]
+scale = Vector2(4, 3.8)
+sprite_frames = SubResource("SpriteFrames_200kp")

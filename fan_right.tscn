@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cvnw8mg4phmta"]
 
-[ext_resource type="Texture2D" uid="uid://cphqpdoyuov6t" path="res://ArtAssets/Extras/FanPlaceholder.png" id="1_1vo3d"]
 [ext_resource type="Script" uid="uid://c0mnc5irf6qrr" path="res://Scripts/fan.gd" id="1_wv1b0"]
 [ext_resource type="AudioStream" uid="uid://cv4hlgarnsyn1" path="res://Sounds/FanBlowing.wav" id="3_85ayj"]
+[ext_resource type="Texture2D" uid="uid://m0h3m32ppej0" path="res://ArtAssets/Extras/Fanimation.png" id="3_i3oqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vgsl"]
 size = Vector2(64, 14)
@@ -10,15 +10,41 @@ size = Vector2(64, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7l2ec"]
 size = Vector2(107, 58)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5jdr"]
+atlas = ExtResource("3_i3oqx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld02i"]
+atlas = ExtResource("3_i3oqx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_313tx"]
+atlas = ExtResource("3_i3oqx")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3hudv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5jdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld02i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_313tx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D" unique_id=295888628]
 script = ExtResource("1_wv1b0")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=447362986]
 collision_layer = 0
 collision_mask = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1475863930]
-texture = ExtResource("1_1vo3d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=2000361025]
 position = Vector2(0, 25)
@@ -35,3 +61,10 @@ shape = SubResource("RectangleShape2D_7l2ec")
 stream = ExtResource("3_85ayj")
 autoplay = true
 max_distance = 494.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1120256334]
+position = Vector2(0, 16)
+scale = Vector2(-2, 2)
+sprite_frames = SubResource("SpriteFrames_3hudv")
+autoplay = "default"
+speed_scale = 2.0

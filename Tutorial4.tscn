@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cy8tqdi60a84x"]
+
+[ext_resource type="Script" uid="uid://dlgpku1osycyx" path="res://TitleButton.gd" id="1_bigk1"]
+[ext_resource type="Texture2D" uid="uid://c6vrnkab0ev5u" path="res://ArtAssets/Extras/Background.png" id="2_6bdqv"]
+[ext_resource type="Texture2D" uid="uid://dxp8kq7avx45a" path="res://ArtAssets/Extras/Tutorial4.png" id="3_bigk1"]
+[ext_resource type="Texture2D" uid="uid://cg404gakvug3v" path="res://ArtAssets/Extras/Torch.png" id="4_ncp5o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quvj1"]
+atlas = ExtResource("4_ncp5o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4n62"]
+atlas = ExtResource("4_ncp5o")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg4ux"]
+atlas = ExtResource("4_ncp5o")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yytgh"]
+atlas = ExtResource("4_ncp5o")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpm8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quvj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4n62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg4ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yytgh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tutorial4" type="Node2D" unique_id=890056521]
+scale = Vector2(3, 3)
+
+[node name="CanvasLayer (UI stuff)" type="CanvasLayer" parent="." unique_id=1055725370]
+
+[node name="Button" type="Button" parent="CanvasLayer (UI stuff)" unique_id=866631755]
+offset_left = 767.0
+offset_top = 617.0
+offset_right = 864.0
+offset_bottom = 648.0
+scale = Vector2(3, 3)
+text = "I'm ready!"
+script = ExtResource("1_bigk1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=461841345]
+modulate = Color(0.69813776, 0.51835495, 0.18007478, 1)
+position = Vector2(799, 196.33333)
+scale = Vector2(5.746666, 2.0000002)
+texture = ExtResource("2_6bdqv")
+flip_h = true
+flip_v = true
+
+[node name="Tutorial" type="Sprite2D" parent="." unique_id=1463842647]
+position = Vector2(160.33333, 153.00002)
+scale = Vector2(-0.3, -0.3)
+texture = ExtResource("3_bigk1")
+flip_h = true
+flip_v = true
+
+[node name="Torch" type="Node2D" parent="." unique_id=263527283]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Torch" unique_id=1466396573]
+position = Vector2(376, 232.66667)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_kpm8p")
+autoplay = "default"
+frame_progress = 0.5196964
+speed_scale = 2.0

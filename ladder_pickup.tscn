@@ -1,20 +1,54 @@
 [gd_scene format=3 uid="uid://gc0dvvyagm6d"]
 
 [ext_resource type="Script" uid="uid://bw2kxw2ct2cta" path="res://Scripts/ladder_pickup.gd" id="1_dadsl"]
-[ext_resource type="Texture2D" uid="uid://cjjssv6xrc21f" path="res://ArtAssets/Extras/Ladder.png" id="1_tcqp8"]
+[ext_resource type="Texture2D" uid="uid://b3582r2ua6r4x" path="res://ArtAssets/Extras/Ladder_Animation.png" id="3_bfts6"]
 [ext_resource type="AudioStream" uid="uid://dpbp8fywrajje" path="res://Sounds/collectItem.wav" id="3_f8qa4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcqp8"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_aubqb"]
+atlas = ExtResource("3_bfts6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04855"]
+atlas = ExtResource("3_bfts6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wt6v"]
+atlas = ExtResource("3_bfts6")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l71fh"]
+atlas = ExtResource("3_bfts6")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gc6b5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aubqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04855")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wt6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l71fh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="RigidBody2D" type="RigidBody2D" unique_id=497093255]
-scale = Vector2(0.35, 0.35)
+scale = Vector2(0.3, 0.3)
 collision_layer = 4
 collision_mask = 4
+mass = 1000.0
 can_sleep = false
 script = ExtResource("1_dadsl")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449529036]
-texture = ExtResource("1_tcqp8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1228277379]
 scale = Vector2(3, 3)
@@ -28,3 +62,9 @@ shape = SubResource("RectangleShape2D_tcqp8")
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=586793803]
 stream = ExtResource("3_f8qa4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1581299352]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_gc6b5")
+autoplay = "default"
+frame_progress = 0.493679
