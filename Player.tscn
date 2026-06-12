@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dsk7eyui5vxhl" path="res://ArtAssets/Player/playerCooldownVisual.png" id="6_dtqjt"]
 [ext_resource type="AudioStream" uid="uid://btpfsnlot3rj2" path="res://Sounds/BuildItem.wav" id="6_hp6x6"]
 [ext_resource type="Script" uid="uid://cn1tdmacmgjiu" path="res://Scripts/item_cooldown.gd" id="7_dtqjt"]
+[ext_resource type="AudioStream" uid="uid://citqvam23xf0j" path="res://Sounds/switchUtility.wav" id="7_l6ohk"]
 [ext_resource type="Texture2D" uid="uid://f6tj6pu3nqi3" path="res://ArtAssets/Extras/SwordSwing.png" id="8_5ncpa"]
+[ext_resource type="AudioStream" uid="uid://juddfjcw2kca" path="res://Sounds/tabItems.wav" id="8_oudfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 size = Vector2(40, 342.85712)
@@ -121,6 +123,12 @@ stream = ExtResource("5_wi0c6")
 
 [node name="BuildItemSound" type="AudioStreamPlayer2D" parent="." unique_id=732131406]
 stream = ExtResource("6_hp6x6")
+
+[node name="switchUtility" type="AudioStreamPlayer2D" parent="." unique_id=1365987522]
+stream = ExtResource("7_l6ohk")
+
+[node name="TabItem" type="AudioStreamPlayer2D" parent="." unique_id=213018745]
+stream = ExtResource("8_oudfo")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1596035327]
 stream = ExtResource("3_kne1u")

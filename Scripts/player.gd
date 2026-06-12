@@ -9,6 +9,8 @@ class_name Player
 @onready var hurtSound: AudioStreamPlayer2D = $HurtSound
 @onready var hammerSwingSound: AudioStreamPlayer2D = $HammerSwingSound
 @onready var buildItemSound: AudioStreamPlayer2D = $BuildItemSound
+@onready var switchUtilitySound: AudioStreamPlayer2D = $switchUtility
+@onready var tabItemSound: AudioStreamPlayer2D = $TabItem
 
 @export var sword_hitbox := Area2D
 @export var sword_collision := CollisionShape2D
@@ -95,7 +97,7 @@ func _physics_process(delta: float) -> void:
 			return
 
 		move_and_slide()
-		return
+		#return
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -138,6 +140,7 @@ func _physics_process(delta: float) -> void:
 			placeFan()
 		
 	if Input.is_action_just_pressed("SwapUtility"):
+		switchUtilitySound.play()
 		if utilitySwap1or2 == 1:
 			item1Index += 1
 			if	item1Index == Utility1Options.size(): #If the item being selected is the last
@@ -157,6 +160,7 @@ func _physics_process(delta: float) -> void:
 		
 			
 	if Input.is_action_just_pressed("SelectUtility"):
+		tabItemSound.play()
 		if utilitySwap1or2 == 1:
 			utilitySwap1or2 = 2
 		elif utilitySwap1or2 == 2:
@@ -178,7 +182,7 @@ func _physics_process(delta: float) -> void:
 
 	var player_pos := global_transform.x
 	
-	if direction:
+	if direction && not climbing_ladder:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

@@ -1,5 +1,5 @@
 extends Node2D
-var timer = 10
+var timer = 15
 @onready var blowingSound: AudioStreamPlayer2D = $BlowingSound
 
 # Called when the node enters the scene tree for the first time.

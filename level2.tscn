@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://daykgbmlm67cw"]
 
 [ext_resource type="Script" uid="uid://d208vybtkr5fj" path="res://Scripts/level_controller.gd" id="1_rmy57"]
-[ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://OneShotGround.tscn" id="2_qulpo"]
+[ext_resource type="PackedScene" uid="uid://dfe6fr5gasob0" path="res://ThreeShotGround.tscn" id="2_qulpo"]
 [ext_resource type="Script" uid="uid://bvge6xfct74w1" path="res://Scripts/ladder_builder.gd" id="3_jifot"]
 [ext_resource type="PackedScene" uid="uid://bbvemn175whqr" path="res://ladderPiece.tscn" id="4_3opl0"]
 [ext_resource type="Texture2D" uid="uid://cvsahamjkdpix" path="res://ArtAssets/Tilemap/GroundPlaceholder.png" id="5_dc5vx"]

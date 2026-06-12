@@ -1,25 +1,38 @@
 extends CharacterBody2D
 
+@export var animator: AnimatedSprite2D
 @export var ladder_scene: PackedScene
-const SPEED = 90.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 150.0
+const JUMP_VELOCITY = -550.0
 var player: CharacterBody2D
 var jumpTimer:= 0.0
-var health = 2.0
-var maxHealth = 2.0
+var health = 1.0
+var maxHealth = 1.0
 var player_in_hitbox = null # Only used for extra stuff. Ignore this
 var isTouchingPlayer = false
 var wall_in_hitbox = null
 var isTouchingWall = false
 var damage_timer = 0.0
 var knockback = Vector2.ZERO
-@export var ladderDropChance := 10.0
+@export var ladderDropChance := 5.0
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	reset_jump_timer()
 	$Hitbox.area_entered.connect(_on_hurtbox_area_entered)
 	$Hitbox.area_exited.connect(_on_hurtbox_area_exited)
+	var random_int = randi_range(1, 5)
+	match random_int:
+		1: 
+			animator.play("CYAN")
+		2:
+			animator.play("GREEN")
+		3:
+			animator.play("MAGENTA")
+		4:
+			animator.play("ORANGE")
+		5:
+			animator.play("PURPLE")
 
 
 
@@ -31,7 +44,7 @@ func _on_hurtbox_area_entered(area):
 		
 	if area.is_in_group("sword"):
 		getHurt()
-		var knockback_strength = 1500.0
+		var knockback_strength = 1750.0
 		var direction = global_position.direction_to(area.global_position)
 		direction.y = 0
 		var explosion_force = direction * knockback_strength

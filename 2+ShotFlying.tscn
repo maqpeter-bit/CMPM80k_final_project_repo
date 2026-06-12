@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://lrbp3cu15ejp"]
+
+[ext_resource type="Script" uid="uid://b18ftbml4w6nl" path="res://Scripts/1healthFlying.gd" id="1_c8tef"]
+[ext_resource type="PackedScene" uid="uid://gc0dvvyagm6d" path="res://ladder_pickup.tscn" id="2_vbugf"]
+[ext_resource type="Texture2D" uid="uid://dp4ts1l8ej3xg" path="res://ArtAssets/Hordes/FlyingBug2+Health/mutefly2final2.png" id="3_kqicd"]
+[ext_resource type="Texture2D" uid="uid://cqmc1llbwfvbl" path="res://ArtAssets/Hordes/FlyingBug2+Health/mutefly2final3.png" id="4_yi4j2"]
+[ext_resource type="Texture2D" uid="uid://dlt3jrr62rtmw" path="res://ArtAssets/Hordes/FlyingBug2+Health/mutefly2final.png" id="5_c8tef"]
+[ext_resource type="Script" uid="uid://ctrqbobugl1rx" path="res://Scripts/enemy_health_bar.gd" id="8_tdw8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbugf"]
+atlas = ExtResource("3_kqicd")
+region = Rect2(0, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq1nr"]
+atlas = ExtResource("3_kqicd")
+region = Rect2(88, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61lj0"]
+atlas = ExtResource("3_kqicd")
+region = Rect2(0, 88, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0a5o"]
+atlas = ExtResource("3_kqicd")
+region = Rect2(88, 88, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l35pc"]
+atlas = ExtResource("3_kqicd")
+region = Rect2(0, 176, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb64n"]
+atlas = ExtResource("3_kqicd")
+region = Rect2(88, 176, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22gyd"]
+atlas = ExtResource("5_c8tef")
+region = Rect2(0, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr7a8"]
+atlas = ExtResource("5_c8tef")
+region = Rect2(88, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l0wx"]
+atlas = ExtResource("5_c8tef")
+region = Rect2(0, 88, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yv8f"]
+atlas = ExtResource("5_c8tef")
+region = Rect2(88, 88, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i78ay"]
+atlas = ExtResource("5_c8tef")
+region = Rect2(0, 176, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgs63"]
+atlas = ExtResource("5_c8tef")
+region = Rect2(88, 176, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdw8v"]
+atlas = ExtResource("4_yi4j2")
+region = Rect2(0, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw03b"]
+atlas = ExtResource("4_yi4j2")
+region = Rect2(88, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vffx"]
+atlas = ExtResource("4_yi4j2")
+region = Rect2(0, 88, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to5gj"]
+atlas = ExtResource("4_yi4j2")
+region = Rect2(88, 88, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x77uf"]
+atlas = ExtResource("4_yi4j2")
+region = Rect2(0, 176, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrapt"]
+atlas = ExtResource("4_yi4j2")
+region = Rect2(88, 176, 88, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3o8ru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbugf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq1nr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61lj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0a5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l35pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb64n")
+}],
+"loop": true,
+"name": &"BLUE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22gyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr7a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l0wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yv8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i78ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgs63")
+}],
+"loop": true,
+"name": &"PURPLE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdw8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw03b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vffx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to5gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x77uf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrapt")
+}],
+"loop": true,
+"name": &"YELLOW",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85bxh"]
+size = Vector2(64, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqm35"]
+size = Vector2(62.857147, 51.428574)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfkf6"]
+bg_color = Color(0.92057854, 0.097221605, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l07px"]
+bg_color = Color(3.3691526e-07, 0.7277015, 0.11157543, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1335456853 node_paths=PackedStringArray("animator") groups=["enemies"]]
+z_index = 1
+scale = Vector2(0.35, 0.35)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_c8tef")
+animator = NodePath("AnimatedSprite2D")
+ladder_scene = ExtResource("2_vbugf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1563062416 groups=["enemies"]]
+sprite_frames = SubResource("SpriteFrames_3o8ru")
+animation = &"PURPLE"
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=58610119 groups=["enemies"]]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_85bxh")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1228627923]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1579293698]
+position = Vector2(-3.4059785e-06, 5.71428)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_dqm35")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1821193875 node_paths=PackedStringArray("enemy", "healthBar")]
+offset_left = -45.71428
+offset_top = -37.142853
+offset_right = 261.2857
+offset_bottom = 4.857147
+scale = Vector2(0.32690838, 0.3656251)
+tooltip_text = "HEALTH:"
+theme_override_colors/font_color = Color(0.9490196, 1, 0.94509804, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/background = SubResource("StyleBoxFlat_nfkf6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_l07px")
+value = 100.0
+script = ExtResource("8_tdw8v")
+enemy = NodePath("..")
+healthBar = NodePath(".")
